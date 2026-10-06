@@ -69,20 +69,17 @@ h2{font-size:clamp(26px,3vw,52px);margin-bottom:8px}
 .icon-card b{display:block;color:var(--rx)}
 .icon-card small{display:block;color:var(--tx2);font-weight:600}
 
-/* ART & SVG STYLING */
-.art{width:100%;overflow:hidden;border:2px solid var(--lil);border-radius:22px;background:linear-gradient(145deg,#fcf8fd,#f4e9f9);margin-bottom:18px;box-shadow:0 4px 20px rgba(121,75,158,.08)}
-.art svg{display:block;width:100%;height:auto}
-.art.square{aspect-ratio:1/1;min-height:0;margin:0;border-radius:20px}
-.art.clinical{background:#fff;border-color:var(--bd)}
+/* ART & IMAGE STYLING */
+.art-img{width:100%;height:auto;display:block;border-radius:22px;border:2px solid var(--lil);margin-bottom:18px;box-shadow:0 4px 20px rgba(121,75,158,.08);object-fit:cover}
 .positions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin-bottom:20px}
 .position{display:flex;flex-direction:column;align-items:center}
+.position img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:2px solid var(--lil)}
 .position figcaption{text-align:center;color:var(--rx);font-weight:900;margin-top:9px;font-size:1.05em}
 
 /* APOGEIA MINI CARDS */
 .apoj-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px;margin-bottom:18px}
 .apoj-card{display:flex;gap:14px;align-items:center;background:var(--lc);border:2.5px solid var(--lil);border-radius:18px;padding:14px 18px}
 .apoj-card .mini-art{width:80px;height:80px;flex:none;border-radius:14px;overflow:hidden;background:#fff;border:2px solid var(--rx2);display:flex;align-items:center;justify-content:center}
-.apoj-card .mini-art svg{width:100%;height:100%}
 .apoj-card div b{display:block;color:var(--rx);font-size:1em;line-height:1.25;margin-bottom:3px}
 .apoj-card div span{font-size:.88em;color:var(--tx2);line-height:1.35;display:block}
 
@@ -96,12 +93,6 @@ ul.clean li{padding:8px 0 8px 26px;border-bottom:1px solid #00000012;position:re
 ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-weight:900;font-size:18px}
 .adjust ul.clean li:before{content:'!';color:var(--am);font-weight:900}
 
-.condition{overflow:hidden;border:3px solid var(--rx2);background:#fff}
-.condition>h3{padding:16px 20px;background:var(--lc);color:var(--rx);font-size:1.25em;font-weight:900}
-.condition.amber{border-color:var(--am)}.condition.amber>h3{background:var(--ac);color:#986000}
-.condition.red{border-color:var(--vm)}.condition.red>h3{background:var(--rc);color:var(--vm)}
-.condition .body{padding:18px}
-
 .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:15px;background:var(--rx);padding:20px;border-radius:24px;margin-bottom:18px}
 .phase{text-align:center;background:var(--rx2);color:#fff;border-radius:18px;padding:18px;display:flex;flex-direction:column;align-items:center}
 .bottle{width:74px;margin:0 auto 12px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.15))}
@@ -114,38 +105,6 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .phase h3{text-transform:uppercase;font-size:1.05em;margin-top:6px;letter-spacing:.5px}
 .phase b{display:block;margin:3px 0 6px;color:#f3d9ff;font-size:.95em}
 .phase p{font-size:.88em;opacity:.95;line-height:1.35}
-
-.stomachs{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;max-width:850px;margin:0 auto}
-.stomach{text-align:center;background:var(--rx);color:#fff;border-radius:18px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
-.fruit{height:95px;display:flex;align-items:end;justify-content:center}
-.f1{font-size:25px}.f2{font-size:42px}.f3{font-size:58px}.f4{font-size:76px}
-.stomach .ml{color:#f3d9ff;font-weight:900;font-size:1.1em}
-
-.prevent{display:grid;border:3px solid var(--rx);border-radius:20px;overflow:hidden;margin-bottom:16px}
-.prevent h3{display:grid;place-items:center;background:var(--rx);color:#fff;padding:18px;text-align:center;font-weight:900}
-.prevent>div{padding:20px;background:#fff}
-.prevent p+p{margin-top:14px}
-@media(min-width:620px){.prevent{grid-template-columns:26% 1fr}}
-
-.substances{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
-.substance{border:3px solid var(--vm);border-radius:18px;overflow:hidden;background:#fff}
-.substance.amber{border-color:var(--am)}
-.substance h3{background:var(--vm);color:#fff;padding:13px;font-weight:900;font-size:1.05em}
-.substance.amber h3{background:var(--am)}
-.substance div{padding:14px;font-size:.95em}
-.source{background:var(--lc);padding:16px;border-radius:14px;color:var(--tx2);margin:16px auto;font-size:.88em;border:2px solid var(--lil)}
-
-.timeline{position:relative;padding-left:50px}
-.timeline:before{content:'';position:absolute;left:18px;top:10px;bottom:10px;width:4px;background:linear-gradient(var(--rx),var(--lil));border-radius:4px}
-.step{position:relative;margin-bottom:16px}
-.step .dot{position:absolute;left:-48px;width:38px;height:38px;display:grid;place-items:center;border:4px solid var(--rx2);border-radius:50%;background:#fff;color:var(--rx);font-weight:900}
-.step h3{color:var(--rx);font-weight:800}
-.step div{background:var(--lc);padding:14px;border-radius:14px;margin-top:4px}
-
-.formula-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.formula-step{text-align:center;background:var(--lc);border:2px solid var(--lil);border-radius:18px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.formula-step svg{width:70px;height:70px}
-.formula-step b{display:block;color:var(--rx);font-size:.95em}
 
 .linkcard{display:flex;align-items:center;gap:15px;padding:18px;border:2.5px solid var(--bd);background:#fff;transition:.18s;cursor:pointer}
 .linkcard:hover{border-color:var(--rx2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(121,75,158,.14)}
@@ -172,14 +131,6 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .alert-block{margin-top:35px;padding-top:25px;border-top:3px solid var(--bd)}
 .alert-button{width:100%;border:0;border-radius:18px;padding:20px;background:var(--vm);color:#fff;font-weight:900;cursor:pointer;font-size:1.08em}
 
-@media(max-width:620px){
-  .formula-flow{grid-template-columns:1fr 1fr}
-  .band{align-items:flex-start}
-}
-@media(max-width:360px){
-  .positions{grid-template-columns:1fr}
-  .stomachs{grid-template-columns:1fr 1fr}
-}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -189,519 +140,37 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 <nav class="nav"><div class="inner"><button class="back" id="back">‹ Voltar</button><button class="home" id="home">🏠 Início</button></div></nav>
 
 <script>
-const C={
-  rx:'#794b9e',rx2:'#9b6cac',lil:'#e0bdec',lc:'#f7effb',
-  pele:'#fcd3b6',peleSombra:'#e5a887',peleEscura:'#b87352',
-  cabelo:'#3d2338',cabeloLoiro:'#f5ce62',cabeloCast:'#5c3629',
-  roupa:'#ffffff',roupaRosa:'#d84a75',roupaRoxa:'#794b9e',almofada:'#e66d8f',
-  linha:'#2b1928',vd:'#2e7d5b',vm:'#c0392b',am:'#e08b00',az:'#1565c0'
-};
-
-const svg=(body,v='0 0 600 400')=>`<svg viewBox="${v}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${body}</svg>`;
-const art=(body,label,cls='',v='0 0 600 400')=>`<div class="art ${cls}" role="img" aria-label="${label}">${svg(body,v)}</div>`;
-
-/* FLORAIS E FUNDO DECORATIVO */
-const florals=()=>`
-  <defs>
-    <linearGradient id="gBg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8fc"/><stop offset="1" stop-color="#f2e2f6"/></linearGradient>
-  </defs>
-  <rect width="600" height="400" rx="22" fill="url(#gBg)"/>
-  <!-- Ramos e folhagens -->
-  <path d="M120 200 C80 120 130 50 140 20 C155 60 140 120 120 200 Z" fill="#684775" opacity=".85"/>
-  <path d="M100 130 C60 115 50 80 55 65 C75 80 90 105 100 130 Z" fill="#684775" opacity=".8"/>
-  <path d="M135 110 C165 95 180 65 175 50 C160 68 145 90 135 110 Z" fill="#684775" opacity=".8"/>
-  
-  <path d="M480 200 C520 120 470 50 460 20 C445 60 460 120 480 200 Z" fill="#684775" opacity=".85"/>
-  <path d="M500 130 C540 115 550 80 545 65 C525 80 510 105 500 130 Z" fill="#684775" opacity=".8"/>
-  <path d="M465 110 C435 95 420 65 425 50 C440 68 455 90 465 110 Z" fill="#684775" opacity=".8"/>
-  
-  <!-- Flores magenta / rosa -->
-  <g transform="translate(100 90)">
-    <circle cx="-12" cy="-12" r="14" fill="#cb3366"/>
-    <circle cx="12" cy="-12" r="14" fill="#cb3366"/>
-    <circle cx="0" cy="14" r="14" fill="#cb3366"/>
-    <circle cx="0" cy="0" r="7" fill="#fcd3b6"/>
-  </g>
-  <g transform="translate(500 90)">
-    <circle cx="-12" cy="-12" r="14" fill="#cb3366"/>
-    <circle cx="12" cy="-12" r="14" fill="#cb3366"/>
-    <circle cx="0" cy="14" r="14" fill="#cb3366"/>
-    <circle cx="0" cy="0" r="7" fill="#fcd3b6"/>
-  </g>
-  <g transform="translate(300 45)">
-    <circle cx="-10" cy="-10" r="10" fill="#cb3366"/>
-    <circle cx="10" cy="-10" r="10" fill="#cb3366"/>
-    <circle cx="0" cy="10" r="10" fill="#cb3366"/>
-    <circle cx="0" cy="0" r="5" fill="#fce5cd"/>
-  </g>
-`;
-
-/* 1. CAPA ESTILO EDITORIAL MATERNO */
-function cover(){
-  return art(`
-    ${floraisCapa()}
-    <!-- Almofada de amamentação Rosa -->
-    <ellipse cx="300" cy="310" rx="160" ry="46" fill="#e66d8f" stroke="#2b1928" stroke-width="4.5"/>
-    
-    <!-- Pernas cruzadas sentada -->
-    <path d="M170 340 C140 370 240 400 300 375 C360 400 460 370 430 340" fill="#f07598" stroke="#2b1928" stroke-width="4.5"/>
-    <path d="M190 370 C200 410 245 400 245 385" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-    <path d="M410 370 C400 410 355 400 355 385" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-
-    <!-- Tronco e Mama da Mãe -->
-    <path d="M225 180 C215 250 220 310 240 330 C270 340 330 340 360 330 C380 310 385 250 375 180 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    <path d="M260 215 C260 260 310 275 330 250" fill="#fcd3b6" stroke="#2b1928" stroke-width="4" stroke-linecap="round"/>
-    
-    <!-- Top Branco -->
-    <path d="M225 185 L285 245 L355 185 L375 220 C365 295 345 315 300 315 C255 315 235 295 225 220 Z" fill="#ffffff" stroke="#2b1928" stroke-width="4.5"/>
-
-    <!-- Braços da Mãe segurando -->
-    <path d="M225 190 C180 230 185 290 260 305" fill="none" stroke="#2b1928" stroke-width="32" stroke-linecap="round"/>
-    <path d="M225 190 C180 230 185 290 260 305" fill="none" stroke="#fcd3b6" stroke-width="24" stroke-linecap="round"/>
-    
-    <path d="M375 190 C420 240 405 310 310 318" fill="none" stroke="#2b1928" stroke-width="32" stroke-linecap="round"/>
-    <path d="M375 190 C420 240 405 310 310 318" fill="none" stroke="#fcd3b6" stroke-width="24" stroke-linecap="round"/>
-
-    <!-- Bebê deitado mamando -->
-    <g transform="translate(230 220)">
-      <path d="M45 40 C75 35 125 45 130 85 C120 105 70 100 40 85 Z" fill="#b02b5a" stroke="#2b1928" stroke-width="4.5"/>
-      <!-- Cabeça do Bebê -->
-      <circle cx="35" cy="40" r="30" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-      <path d="M15 32 C20 15 45 15 55 25" fill="#3d2338" stroke="#2b1928" stroke-width="3"/>
-      <!-- Olho fechado calmo e boquinha no peito -->
-      <path d="M40 38 Q46 45 52 38" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
-      <path d="M58 45 Q65 48 60 55" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
-      <!-- Mãozinha do bebê -->
-      <circle cx="85" cy="50" r="9" fill="#fcd3b6" stroke="#2b1928" stroke-width="3.5"/>
-    </g>
-
-    <!-- Mão da mãe apoiando as costas do bebê -->
-    <path d="M275 270 C285 260 310 270 315 295" fill="none" stroke="#2b1928" stroke-width="4" stroke-linecap="round"/>
-
-    <!-- Cabeça e Rosto da Mãe -->
-    <!-- Cabelo atrás -->
-    <path d="M210 110 C190 190 230 230 230 230 C250 180 230 120 230 100 Z" fill="#3d2338" stroke="#2b1928" stroke-width="4"/>
-    <path d="M390 110 C410 190 370 230 370 230 C350 180 370 120 370 100 Z" fill="#3d2338" stroke="#2b1928" stroke-width="4"/>
-    <!-- Pescoço e Rosto -->
-    <path d="M275 130 L275 165 L325 165 L325 130 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-    <path d="M250 90 C250 145 280 160 300 160 C320 160 350 145 350 90 C350 45 250 45 250 90 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    <!-- Cabelo frente -->
-    <path d="M245 85 C255 40 345 40 355 85 C340 70 310 70 300 80 C285 70 260 70 245 85 Z" fill="#3d2338" stroke="#2b1928" stroke-width="4"/>
-    <path d="M248 85 C240 125 260 140 260 140 C252 115 255 95 248 85 Z" fill="#3d2338"/>
-    <!-- Expressão Facial Suave -->
-    <!-- Sobrancelhas -->
-    <path d="M268 85 Q278 80 286 86" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
-    <path d="M314 86 Q322 80 332 85" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
-    <!-- Olhos carinhosos voltados para baixo -->
-    <circle cx="278" cy="94" r="3.5" fill="#2b1928"/>
-    <circle cx="322" cy="94" r="3.5" fill="#2b1928"/>
-    <!-- Nariz e Boca com sorriso sereno -->
-    <path d="M298 94 Q302 108 296 112 L304 112" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
-    <path d="M290 124 Q300 134 310 124" fill="none" stroke="#2b1928" stroke-width="3.5" stroke-linecap="round"/>
-    <!-- Bochechas rosadas -->
-    <circle cx="266" cy="108" r="8" fill="#f09ba8" opacity=".6"/>
-    <circle cx="334" cy="108" r="8" fill="#f09ba8" opacity=".6"/>
-  `, 'Ilustração editorial de mãe amamentando bebê no colo');
-}
-
-function floraisCapa(){
-  return `
-    <defs>
-      <linearGradient id="gBg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8fc"/><stop offset="1" stop-color="#f5e8f8"/></linearGradient>
-    </defs>
-    <rect width="600" height="400" rx="22" fill="url(#gBg)"/>
-    <!-- Folhagens estilizadas e flores -->
-    <path d="M90 280 C60 180 120 100 130 50 C150 110 125 200 90 280 Z" fill="#794b9e" opacity=".7"/>
-    <path d="M510 280 C540 180 480 100 470 50 C450 110 475 200 510 280 Z" fill="#794b9e" opacity=".7"/>
-    <circle cx="130" cy="50" r="16" fill="#d84a75"/>
-    <circle cx="470" cy="50" r="16" fill="#d84a75"/>
-    <circle cx="80" cy="180" r="12" fill="#d84a75"/>
-    <circle cx="520" cy="180" r="12" fill="#d84a75"/>
-  `;
-}
-
-/* 2. AS 4 POSIÇÕES PARA AMAMENTAR */
-function positionArt(type){
-  let inner='';
-  if(type==='Tradicional'){ // Posição de Berço / Tradicional
-    inner=`
-      <!-- Fundo com cabeceira / poltrona -->
-      <rect width="400" height="400" rx="20" fill="#f8eefb"/>
-      <path d="M60 120 C60 60 340 60 340 120 L340 380 L60 380 Z" fill="#ecd3f2" stroke="#2b1928" stroke-width="4"/>
-      <!-- Mãe Morena de perfil acolhendo -->
-      <path d="M120 160 C120 250 150 340 200 350 C250 340 280 250 280 160 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-      <path d="M120 220 L280 220 L280 360 L120 360 Z" fill="#d84a75" stroke="#2b1928" stroke-width="4"/>
-      <!-- Rosto -->
-      <circle cx="200" cy="120" r="38" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-      <path d="M170 120 C165 70 235 70 230 120 C220 100 180 100 170 120 Z" fill="#3d2338" stroke="#2b1928" stroke-width="3"/>
-      <!-- Trança descendo -->
-      <path d="M230 120 C245 150 240 200 235 230" fill="none" stroke="#3d2338" stroke-width="12" stroke-linecap="round"/>
-      <path d="M192 122 Q196 128 200 122" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <path d="M195 136 Q202 142 210 136" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <!-- Braços embalando o bebê -->
-      <path d="M130 220 C110 270 180 310 260 280" fill="none" stroke="#2b1928" stroke-width="26" stroke-linecap="round"/>
-      <path d="M130 220 C110 270 180 310 260 280" fill="none" stroke="#fcd3b6" stroke-width="18" stroke-linecap="round"/>
-      <!-- Bebê deitado de frente barriga com barriga -->
-      <g transform="translate(160 210) rotate(-15)">
-        <rect x="20" y="20" width="75" height="45" rx="20" fill="#ffffff" stroke="#2b1928" stroke-width="4"/>
-        <circle cx="15" cy="35" r="22" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-        <path d="M2 30 Q15 15 28 28" fill="#3d2338"/>
-        <path d="M20 38 Q25 42 30 38" fill="none" stroke="#2b1928" stroke-width="2.5"/>
-      </g>
-    `;
-  } else if(type==='Invertida'){ // Posição Invertida (Bola de Rugby / Sob o braço)
-    inner=`
-      <rect width="400" height="400" rx="20" fill="#f8eefb"/>
-      <path d="M70 100 C70 60 330 60 330 100 L330 380 L70 380 Z" fill="#e8d3f2" stroke="#2b1928" stroke-width="4"/>
-      <!-- Almofada na lateral -->
-      <ellipse cx="280" cy="300" rx="70" ry="35" fill="#e66d8f" stroke="#2b1928" stroke-width="4"/>
-      <!-- Mãe -->
-      <path d="M110 160 C110 250 140 340 180 350 C220 340 250 250 250 160 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-      <path d="M110 220 L250 220 L250 360 L110 360 Z" fill="#794b9e" stroke="#2b1928" stroke-width="4"/>
-      <circle cx="180" cy="120" r="38" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-      <path d="M150 120 C145 70 215 70 210 120 Z" fill="#3d2338"/>
-      <path d="M172 122 Q176 128 180 122" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <!-- Braço segurando o bebê sob o braço -->
-      <path d="M220 210 C270 220 280 280 250 300" fill="none" stroke="#2b1928" stroke-width="26" stroke-linecap="round"/>
-      <path d="M220 210 C270 220 280 280 250 300" fill="none" stroke="#fcd3b6" stroke-width="18" stroke-linecap="round"/>
-      <!-- Bebê encaixado lateralmente -->
-      <g transform="translate(200 240) rotate(20)">
-        <rect x="25" y="15" width="80" height="42" rx="18" fill="#ffffff" stroke="#2b1928" stroke-width="4"/>
-        <circle cx="20" cy="30" r="22" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-        <path d="M5 25 Q18 10 30 22" fill="#3d2338"/>
-        <!-- Mão da mãe na nuca do bebê -->
-        <path d="M5 40 Q-5 30 5 20" fill="none" stroke="#2b1928" stroke-width="4"/>
-      </g>
-    `;
-  } else if(type==='Deitada de lado'){ // Deitada de lado na cama
-    inner=`
-      <rect width="400" height="400" rx="20" fill="#f8eefb"/>
-      <!-- Travesseiro e Cama -->
-      <path d="M40 180 C40 140 160 140 160 180 L160 280 L40 280 Z" fill="#ecd3f2" stroke="#2b1928" stroke-width="4"/>
-      <path d="M30 260 L370 260 L370 370 L30 370 Z" fill="#9b6cac" stroke="#2b1928" stroke-width="4"/>
-      <!-- Mãe deitada (cabelo loiro espalhado) -->
-      <path d="M70 150 C50 100 160 80 180 140 C190 180 140 210 100 190 Z" fill="#f5ce62" stroke="#2b1928" stroke-width="4"/>
-      <circle cx="120" cy="165" r="32" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-      <path d="M112 168 Q116 174 120 168" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <!-- Corpo deitado -->
-      <path d="M140 190 C180 200 240 220 300 240 L280 300 L140 280 Z" fill="#ffffff" stroke="#2b1928" stroke-width="4"/>
-      <!-- Bebê deitado de frente para a mãe -->
-      <g transform="translate(160 210)">
-        <rect x="25" y="15" width="70" height="40" rx="16" fill="#f07598" stroke="#2b1928" stroke-width="4"/>
-        <circle cx="20" cy="30" r="19" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-        <path d="M8 25 Q18 14 26 24" fill="#5c3629"/>
-        <path d="M22 34 Q26 38 30 34" fill="none" stroke="#2b1928" stroke-width="2"/>
-      </g>
-    `;
-  } else if(type==='Cavalinho'){ // Posição Vertical / Cavalinho (ou Sling)
-    inner=`
-      <rect width="400" height="400" rx="20" fill="#f8eefb"/>
-      <!-- Mãe de frente/semi-perfil pele morena -->
-      <circle cx="200" cy="100" r="38" fill="#b87352" stroke="#2b1928" stroke-width="4"/>
-      <path d="M165 95 C160 50 240 50 235 95 Z" fill="#3d2338"/>
-      <!-- Brinco / detalhe -->
-      <circle cx="165" cy="105" r="5" fill="#f5ce62"/>
-      <path d="M192 102 Q196 108 200 102" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <path d="M194 116 Q200 122 208 116" fill="none" stroke="#2b1928" stroke-width="3"/>
-      <!-- Tronco e Sling/Faixa Rosa -->
-      <path d="M130 150 C130 240 150 340 200 350 C250 340 270 240 270 150 Z" fill="#b87352" stroke="#2b1928" stroke-width="4"/>
-      <path d="M130 180 L270 260 L240 360 L130 320 Z" fill="#d84a75" stroke="#2b1928" stroke-width="4"/>
-      <!-- Bebê sentado na coxa / cavalinho no colo -->
-      <g transform="translate(180 180)">
-        <rect x="15" y="40" width="50" height="70" rx="20" fill="#ffffff" stroke="#2b1928" stroke-width="4"/>
-        <circle cx="35" cy="30" r="24" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-        <path d="M20 22 Q35 10 48 24" fill="#3d2338"/>
-        <path d="M35 34 Q40 38 45 34" fill="none" stroke="#2b1928" stroke-width="2.5"/>
-        <!-- Perna do bebê montada -->
-        <path d="M20 90 C10 110 15 130 30 135" fill="none" stroke="#2b1928" stroke-width="14" stroke-linecap="round"/>
-        <path d="M20 90 C10 110 15 130 30 135" fill="none" stroke="#fcd3b6" stroke-width="8" stroke-linecap="round"/>
-      </g>
-      <!-- Mão da mãe apoiando as costas eretas do bebê -->
-      <path d="M140 240 C170 270 230 270 250 250" fill="none" stroke="#2b1928" stroke-width="22" stroke-linecap="round"/>
-      <path d="M140 240 C170 270 230 270 250 250" fill="none" stroke="#b87352" stroke-width="14" stroke-linecap="round"/>
-    `;
-  }
-  return `<figure class="position">${art(inner, 'Posição ' + type, 'square', '0 0 400 400')}<figcaption>${type}</figcaption></figure>`;
-}
-
-/* 3. DIAGRAMA DA PEGA CORRETA */
-function latchDiagram(){
-  return art(`
-    <rect width="600" height="340" rx="22" fill="#ffffff"/>
-    <defs>
-      <filter id="sh"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#794b9e" flood-opacity=".15"/></filter>
-    </defs>
-    
-    <!-- Mama da mãe em corte / perfil anatômico amigável -->
-    <path d="M80 340 C100 200 150 110 240 110 C290 110 320 140 330 170 C310 190 290 230 240 250 C180 270 120 330 100 340 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5" filter="url(#sh)"/>
-    <!-- Aréola e Mamilo -->
-    <path d="M270 140 C310 145 335 170 330 195 C305 215 280 205 270 180 Z" fill="#e5987d"/>
-    <circle cx="325" cy="175" r="14" fill="#c9775e"/>
-
-    <!-- Rosto do Bebê abocanhando grande parte da aréola -->
-    <g transform="translate(230 40)">
-      <!-- Cabeça -->
-      <path d="M90 70 C150 50 230 90 230 170 C230 240 160 280 95 240 C85 220 70 215 50 215 C60 190 75 185 80 160 C75 140 40 135 45 110 C65 110 80 90 90 70 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-      <!-- Cabelinho -->
-      <path d="M120 60 C170 45 220 70 230 110 C210 85 170 75 120 75 Z" fill="#3d2338"/>
-      <!-- Olho fechado mamando com prazer -->
-      <path d="M145 130 Q155 140 165 130" fill="none" stroke="#2b1928" stroke-width="3.5" stroke-linecap="round"/>
-      <!-- Bochecha cheia e arredondada -->
-      <circle cx="135" cy="165" r="12" fill="#f09ba8" opacity=".6"/>
-      <!-- Lábios evertidos ("boquinha de peixinho") -->
-      <!-- Lábio superior aberto -->
-      <path d="M45 110 C35 118 45 135 60 135" fill="#d84a75" stroke="#2b1928" stroke-width="3"/>
-      <!-- Lábio inferior virado para fora abocanhando aréola -->
-      <path d="M50 215 C40 205 50 185 65 185" fill="#d84a75" stroke="#2b1928" stroke-width="3"/>
-    </g>
-
-    <!-- Indicadores e Setas Didáticas -->
-    <!-- 1. Boca bem aberta -->
-    <g transform="translate(60 65)">
-      <rect x="0" y="0" width="160" height="34" rx="17" fill="#e7f4ee" stroke="#2e7d5b" stroke-width="2"/>
-      <text x="80" y="22" text-anchor="middle" font-family="Exo" font-weight="900" font-size="14" fill="#2e7d5b">BOCA BEM ABERTA</text>
-      <path d="M160 17 L255 125" stroke="#2e7d5b" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
-      <circle cx="255" cy="125" r="5" fill="#2e7d5b"/>
-    </g>
-
-    <!-- 2. Nariz livre -->
-    <g transform="translate(410 45)">
-      <rect x="0" y="0" width="140" height="34" rx="17" fill="#e9f1fb" stroke="#1565c0" stroke-width="2"/>
-      <text x="70" y="22" text-anchor="middle" font-family="Exo" font-weight="900" font-size="14" fill="#1565c0">NARIZ LIVRE</text>
-      <path d="M40 34 L-55 125" stroke="#1565c0" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
-      <circle cx="-55" cy="125" r="5" fill="#1565c0"/>
-    </g>
-
-    <!-- 3. Queixo encostado -->
-    <g transform="translate(410 275)">
-      <rect x="0" y="0" width="165" height="34" rx="17" fill="#f7effb" stroke="#794b9e" stroke-width="2"/>
-      <text x="82" y="22" text-anchor="middle" font-family="Exo" font-weight="900" font-size="14" fill="#794b9e">QUEIXO ENCOSTADO</text>
-      <path d="M10 0 L-95 -50" stroke="#794b9e" stroke-width="3" stroke-dasharray="4 4" fill="none"/>
-      <circle cx="-95" cy="-50" r="5" fill="#794b9e"/>
-    </g>
-  `, 'Diagrama visual da pega correta com setas indicando boca aberta, nariz livre e queixo encostado');
-}
-
-/* 4. MAMAS CLÍNICAS (Fissura, Peito Cheio e Mastite) */
-function clinicalBreast(type){
-  let details='', title='', cor='#794b9e', bgCor='#f7effb';
-  if(type==='fissura'){
-    title='Fissura: pequena lesão ou rachadura no mamilo';
-    cor='#e08b00'; bgCor='#fff6e3';
-    details=`
-      <!-- Linhas de fissura no mamilo -->
-      <path d="M300 155 L306 175 L296 190 L304 205" fill="none" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
-      <circle cx="300" cy="180" r="28" fill="#e08b00" opacity=".2"/>
-    `;
-  } else if(type==='cheio'){
-    title='Ingurgitamento: mama muito tensa e túrgida';
-    cor='#794b9e'; bgCor='#f7effb';
-    details=`
-      <!-- Setas circulares de massagem suave -->
-      <g fill="none" stroke="#794b9e" stroke-width="5" stroke-linecap="round">
-        <path d="M220 130 C190 160 190 200 220 230"/>
-        <path d="M210 225 L222 232 L225 218"/>
-        <path d="M380 130 C410 160 410 200 380 230"/>
-        <path d="M390 225 L378 232 L375 218"/>
-      </g>
-      <!-- Gotas de alívio saindo -->
-      <path d="M300 230 L300 270 M294 260 L300 270 L306 260" stroke="#1565c0" stroke-width="5" stroke-linecap="round" fill="none"/>
-    `;
-  } else if(type==='mastite'){
-    title='Mastite: área avermelhada, quente e dolorida';
-    cor='#c0392b'; bgCor='#fdeceb';
-    details=`
-      <!-- Área em cunha avermelhada e calor -->
-      <path d="M240 100 C310 70 380 120 350 170 C320 170 270 140 240 100 Z" fill="#c0392b" opacity=".38"/>
-      <path d="M320 80 L330 60 M350 95 L370 85 M295 75 L290 55" stroke="#c0392b" stroke-width="4" stroke-linecap="round"/>
-    `;
-  }
-
-  return art(`
-    <rect width="600" height="340" rx="22" fill="#ffffff"/>
-    <!-- Desenho do seio anatômico didático -->
-    <path d="M150 320 C170 180 220 90 300 90 C380 90 430 180 450 320 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    <circle cx="300" cy="180" r="45" fill="#e5987d"/>
-    <circle cx="300" cy="180" r="17" fill="#c9775e" stroke="#2b1928" stroke-width="3"/>
-    ${details}
-    <!-- Faixa explicativa inferior -->
-    <rect x="50" y="285" width="500" height="38" rx="19" fill="${bgCor}" stroke="${cor}" stroke-width="2"/>
-    <text x="300" y="309" text-anchor="middle" font-family="Exo" font-weight="800" font-size="15" fill="${cor}">${title}</text>
-  `, title, 'clinical');
-}
-
-/* 5. ORDENHA MANUAL EM ETAPAS */
-function milkingArt(){
-  return art(`
-    <rect width="600" height="340" rx="22" fill="#ffffff"/>
-    <!-- Mama -->
-    <path d="M100 320 C120 180 170 100 260 100 C350 100 390 180 410 320 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    <circle cx="260" cy="190" r="46" fill="#e5987d"/>
-    <circle cx="260" cy="190" r="16" fill="#c9775e"/>
-
-    <!-- Mão posicionada em 'C' atrás da aréola -->
-    <g transform="translate(180 40)">
-      <!-- Polegar acima da aréola -->
-      <path d="M170 70 C140 70 95 90 85 110 C80 120 90 130 105 125 C125 118 160 105 190 105 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-      <!-- Indicador e dedos abaixo da aréola -->
-      <path d="M170 210 C140 210 95 190 85 170 C80 160 90 150 105 155 C125 162 160 175 190 175 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-      <!-- Palma da mão -->
-      <path d="M170 70 C220 90 230 190 170 210 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    </g>
-
-    <!-- Setas de compressão (em direção ao tórax e depois unindo os dedos) -->
-    <g fill="none" stroke="#794b9e" stroke-width="4.5" stroke-linecap="round">
-      <path d="M260 105 L260 135 M253 125 L260 135 L267 125"/>
-      <path d="M260 275 L260 245 M253 255 L260 245 L267 255"/>
-    </g>
-
-    <!-- Frasco coletor de vidro esterilizado abaixo -->
-    <g transform="translate(420 160)">
-      <rect x="20" y="20" width="80" height="110" rx="14" fill="#f7effb" stroke="#794b9e" stroke-width="4"/>
-      <path d="M20 70 Q60 80 100 70 L100 120 C100 126 94 130 86 130 L34 130 C26 130 20 126 20 120 Z" fill="#fff6e3"/>
-      <text x="60" y="110" text-anchor="middle" font-family="Exo" font-weight="900" font-size="13" fill="#e08b00">LEITE</text>
-    </g>
-    <!-- Gotas de leite caindo no pote -->
-    <circle cx="340" cy="190" r="4" fill="#e08b00"/>
-    <circle cx="370" cy="205" r="5" fill="#e08b00"/>
-    <circle cx="410" cy="220" r="6" fill="#e08b00"/>
-  `, 'Demonstração da ordenha manual com os dedos posicionados em C');
-}
-
-/* 6. BEBÊ NO COLO APÓS A MAMADA */
-function burpArt(){
-  return art(`
-    <defs>
-      <linearGradient id="gBurp" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8fc"/><stop offset="1" stop-color="#f2e7f8"/></linearGradient>
-    </defs>
-    <rect width="600" height="340" rx="22" fill="url(#gBurp)"/>
-    <!-- Mãe de costas/ombro segurando o bebê ereto no ombro -->
-    <path d="M160 340 C160 240 200 180 270 170 C340 180 380 240 380 340 Z" fill="#794b9e" stroke="#2b1928" stroke-width="4.5"/>
-    <circle cx="270" cy="120" r="40" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-    <path d="M230 120 C230 70 310 70 310 120 Z" fill="#3d2338"/>
-    
-    <!-- Bebê apoiado no ombro em posição vertical -->
-    <g transform="translate(260 110)">
-      <rect x="20" y="40" width="65" height="90" rx="22" fill="#ffffff" stroke="#2b1928" stroke-width="4.5"/>
-      <!-- Cabeça encostada no ombro -->
-      <circle cx="45" cy="30" r="28" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
-      <path d="M25 20 Q45 8 65 22" fill="#3d2338"/>
-      <path d="M52 35 Q58 40 64 35" fill="none" stroke="#2b1928" stroke-width="2.5"/>
-      <!-- Pequena gotinha de leite (regurgitação normal) -->
-      <path d="M68 45 C72 45 76 50 72 56 C68 56 66 50 68 45 Z" fill="#ffffff" stroke="#2b1928" stroke-width="2"/>
-    </g>
-
-    <!-- Mão da mãe acariciando as costas com tapinhas suaves -->
-    <path d="M335 210 C350 210 360 225 350 245 C340 255 320 250 315 235 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
-    <!-- Ondas de aconchego -->
-    <g fill="none" stroke="#9b6cac" stroke-width="3.5" stroke-linecap="round">
-      <path d="M400 180 C415 190 415 210 400 220"/>
-      <path d="M415 170 C435 185 435 225 415 240"/>
-    </g>
-  `, 'Bebê em posição vertical no ombro da mãe após mamar');
-}
-
-/* 7. PRATO COM ALIMENTOS AMASSADOS (6+ MESES) */
-function plateArt(){
-  return art(`
-    <rect width="600" height="340" rx="22" fill="#fcf7fd"/>
-    <!-- Prato cerâmico com divisões -->
-    <circle cx="300" cy="170" r="135" fill="#ffffff" stroke="#9b6cac" stroke-width="8"/>
-    <circle cx="300" cy="170" r="115" fill="#fffbf5" stroke="#f0e3f5" stroke-width="3"/>
-
-    <!-- Grupos Alimentares no Prato (Textura amassada com garfo) -->
-    <!-- 1. Legumes / Cenoura / Abóbora (Laranja amassadinho) -->
-    <path d="M220 110 C260 90 285 120 270 155 C240 165 210 145 220 110 Z" fill="#f39c12"/>
-    <circle cx="235" cy="120" r="4" fill="#d35400"/>
-    <circle cx="255" cy="135" r="5" fill="#d35400"/>
-    
-    <!-- 2. Folhas verdes / Brócolis (Verde) -->
-    <path d="M310 105 C350 95 375 125 365 155 C335 165 305 140 310 105 Z" fill="#27ae60"/>
-    <circle cx="330" cy="120" r="5" fill="#1e8449"/>
-    <circle cx="350" cy="135" r="4" fill="#1e8449"/>
-
-    <!-- 3. Arroz e Feijão amassados -->
-    <path d="M210 185 C240 170 280 180 275 225 C250 245 205 230 210 185 Z" fill="#f5eef8"/>
-    <!-- Grãos de feijão -->
-    <ellipse cx="230" cy="200" rx="7" ry="5" fill="#6e2c00"/>
-    <ellipse cx="250" cy="215" rx="7" ry="5" fill="#6e2c00"/>
-
-    <!-- 4. Carne / Frango desfiado / Ovo -->
-    <path d="M305 185 C345 170 380 195 365 235 C330 250 295 230 305 185 Z" fill="#e67e22"/>
-    <circle cx="335" cy="210" r="6" fill="#d35400"/>
-
-    <!-- Garfo ao lado ilustrando que é amassado e nunca liquidificado -->
-    <g transform="translate(470 70)">
-      <rect x="18" y="80" width="8" height="110" rx="4" fill="#794b9e"/>
-      <path d="M10 20 L10 60 C10 75 34 75 34 60 L34 20" fill="none" stroke="#794b9e" stroke-width="4.5" stroke-linecap="round"/>
-      <line x1="18" y1="20" x2="18" y2="55" stroke="#794b9e" stroke-width="4"/>
-      <line x1="26" y1="20" x2="26" y2="55" stroke="#794b9e" stroke-width="4"/>
-    </g>
-    <text x="300" y="322" text-anchor="middle" font-family="Exo" font-weight="900" font-size="15" fill="#794b9e">Alimentos amassados no garfo · Cores e texturas variadas</text>
-  `, 'Prato com legumes, arroz, feijão e proteína amassados com garfo');
-}
-
-/* 8. MINI-ILUSTRAÇÕES DA APOJADURA (TELA 1) */
-function miniArt(type){
-  if(type==='peito-descida'){
-    return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="12" fill="#f7effb"/><path d="M15 65 C20 40 35 25 50 25 C65 25 70 45 70 65 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="3"/><circle cx="50" cy="42" r="10" fill="#e5987d"/><circle cx="50" cy="42" r="4" fill="#c9775e"/><path d="M50 48 Q50 62 50 64" stroke="#1565c0" stroke-width="3" stroke-linecap="round" fill="none"/></svg>`;
-  } else if(type==='mama-alternada'){
-    return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="12" fill="#f7effb"/><circle cx="40" cy="40" r="28" fill="#ffffff" stroke="#794b9e" stroke-width="3"/><path d="M28 35 C28 25 52 25 52 35 M48 28 L54 34 L48 40" fill="none" stroke="#794b9e" stroke-width="3" stroke-linecap="round"/><path d="M52 45 C52 55 28 55 28 45 M32 52 L26 46 L32 40" fill="none" stroke="#794b9e" stroke-width="3" stroke-linecap="round"/></svg>`;
-  } else if(type==='sutia-bom'){
-    return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="12" fill="#e7f4ee"/><path d="M18 48 C18 35 36 35 36 48 C36 56 18 56 18 48 Z" fill="#ffffff" stroke="#2e7d5b" stroke-width="3"/><path d="M44 48 C44 35 62 35 62 48 C62 56 44 56 44 48 Z" fill="#ffffff" stroke="#2e7d5b" stroke-width="3"/><line x1="24" y1="20" x2="24" y2="38" stroke="#2e7d5b" stroke-width="3.5" stroke-linecap="round"/><line x1="56" y1="20" x2="56" y2="38" stroke="#2e7d5b" stroke-width="3.5" stroke-linecap="round"/><path d="M15 48 L65 48" stroke="#2e7d5b" stroke-width="3"/></svg>`;
-  } else if(type==='sutia-buraco'){
-    return `<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect width="80" height="80" rx="12" fill="#fdeceb"/><circle cx="40" cy="42" r="24" fill="#ffffff" stroke="#c0392b" stroke-width="3"/><circle cx="40" cy="42" r="10" fill="#fdeceb" stroke="#c0392b" stroke-width="2.5" stroke-dasharray="3 3"/><line x1="22" y1="24" x2="58" y2="60" stroke="#c0392b" stroke-width="4.5" stroke-linecap="round"/></svg>`;
-  }
-}
-
-const link=(ico,title,sub,href,cls='')=>`<a class="linkcard ${cls}" href="${href}" target="_blank" rel="noopener"><span class="ico">${ico}</span><span><b>${title}</b><small>${sub}</small></span><span class="arrow">›</span></a>`;
-const guide=()=>link('📘','Guia Alimentar para Crianças Menores de 2 Anos','Ministério da Saúde · abrir PDF','https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf');
-const menuCard=(id,ico,t,s)=>`<button class="menu-card" data-go="${id}"><span class="ico">${ico}</span><b>${t}</b><small>${s}</small></button>`;
-
 const screens={
 home:()=>`
-  ${cover()}
+  <img src="watermarked_img_2304253256003023564.jpg" alt="Amamentação: Cultura, mitos e saberes" class="art-img">
   <h1 style="text-align:center">Amamentação</h1>
   <p class="sub" style="text-align:center">Cultura, mitos e saberes</p>
   
   <div class="menu-group">
     <div class="group-title"><span class="num">1</span>Os primeiros dias</div>
     <div class="grid">
-      ${menuCard('first','🤱','Primeiros dias','A descida do leite')}
-      ${menuCard('phases','🍼','Fases do leite','Colostro até leite maduro')}
-      ${menuCard('latch','👶','A pega','Posições e sinais observáveis')}
-      ${menuCard('pain','🩹','Quando dói','Fissura, peito cheio e mastite')}
+      <button class="menu-card" data-go="first"><span class="ico">🤱</span><b>Primeiros dias</b><small>A descida do leite</small></button>
+      <button class="menu-card" data-go="phases"><span class="ico">🍼</span><b>Fases do leite</b><small>Colostro até leite maduro</small></button>
+      <button class="menu-card" data-go="latch"><span class="ico">👶</span><b>A pega</b><small>Posições e sinais observáveis</small></button>
+      <button class="menu-card" data-go="pain"><span class="ico">🩹</span><b>Quando dói</b><small>Fissura, peito cheio e mastite</small></button>
     </div>
   </div>
   
   <div class="menu-group">
     <div class="group-title"><span class="num">2</span>No dia a dia</div>
     <div class="grid">
-      ${menuCard('amount','🍽️','Quanto mama','Fome e saciedade')}
-      ${menuCard('sleep','😴','Sono do bebê','O que é esperado')}
-      ${menuCard('returns','💧','Leite que volta','Depois da mamada')}
-      ${menuCard('milk','🤲','Tirar o leite','Ordenha manual')}
-    </div>
-  </div>
-  
-  <div class="menu-group">
-    <div class="group-title"><span class="num">3</span>Dúvidas comuns</div>
-    <div class="grid">
-      ${menuCard('myths','💭','Mitos','O que não é verdade')}
-      ${menuCard('formula','🥣','Fórmula','Preparo seguro')}
-      ${menuCard('drugs','🚭','Álcool e substâncias','Riscos e orientação')}
-    </div>
-  </div>
-  
-  <div class="menu-group">
-    <div class="group-title"><span class="num">4</span>Depois dos 6 meses</div>
-    <div class="grid">
-      ${menuCard('food','🥑','A comida chega','Introdução alimentar')}
+      <button class="menu-card" data-go="amount"><span class="ico">🍽️</span><b>Quanto mama</b><small>Fome e saciedade</small></button>
+      <button class="menu-card" data-go="returns"><span class="ico">💧</span><b>Leite que volta</b><small>Depois da mamada</small></button>
+      <button class="menu-card" data-go="milk"><span class="ico">🤲</span><b>Tirar o leite</b><small>Ordenha manual</small></button>
     </div>
   </div>
   
   <div class="sec">Material oficial do Ministério da Saúde</div>
-  ${guide()}
+  <a class="linkcard" href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf" target="_blank" rel="noopener">
+    <span class="ico">📘</span>
+    <span><b>Guia Alimentar para Crianças Menores de 2 Anos</b><small>Ministério da Saúde · abrir PDF</small></span>
+    <span class="arrow">›</span>
+  </a>
   
   <div class="alert-block">
     <div class="card danger">
@@ -712,103 +181,20 @@ home:()=>`
   </div>
 `,
 
-first:()=>`
-  <h2>Os primeiros dias</h2>
-  <p class="sub">Apojadura e adaptação inicial.</p>
-  
-  <div class="hero-number">
-    <strong>3º–5º</strong>
-    <b>dia após o parto</b>
-    <p>É quando ocorre a descida do leite (apojadura).</p>
-  </div>
-
-  <div class="apoj-cards">
-    <div class="apoj-card">
-      <div class="mini-art">${miniArt('peito-descida')}</div>
-      <div><b>Contato pele a pele</b><span>Estimula os hormônios naturais que auxiliam na descida rápida do leite.</span></div>
-    </div>
-    <div class="apoj-card">
-      <div class="mini-art">${miniArt('mama-alternada')}</div>
-      <div><b>Alterne as mamas</b><span>Ofereça os dois lados de forma equilibrada em cada mamada.</span></div>
-    </div>
-  </div>
-
-  <div class="sec">Atenção aos sutiãs</div>
-  <div class="apoj-cards">
-    <div class="apoj-card" style="border-color:var(--vd);background:var(--vc)">
-      <div class="mini-art" style="border-color:var(--vd)">${miniArt('sutia-bom')}</div>
-      <div><b style="color:var(--vd)">Sutiã com boa sustentação</b><span>Alças largas que distribuem o peso confortavelmente.</span></div>
-    </div>
-    <div class="apoj-card" style="border-color:var(--vm);background:var(--rc)">
-      <div class="mini-art" style="border-color:var(--vm)">${miniArt('sutia-buraco')}</div>
-      <div><b style="color:var(--vm)">Evite sutiãs com "buraco"</b><span>Podem comprimir canais de leite e favorecer ingurgitamento e mastite.</span></div>
-    </div>
-  </div>
-
-  <div class="sec">Rede de apoio</div>
-  <div class="grid">
-    <div class="icon-card green"><span class="ico">👨‍👩‍👧</span><b>Família</b><small>ajuda e apoia</small></div>
-    <div class="icon-card green"><span class="ico">🏥</span><b>Equipe UBS</b><small>tira dúvidas</small></div>
-    <div class="icon-card red"><span class="ico">🗣️</span><b>"Pitacos"</b><small>desconfie de mitos</small></div>
-  </div>
-`,
-
-phases:()=>`
-  <h2>Fases do leite</h2>
-  <p class="sub">O leite se transforma na medida exata do crescimento.</p>
-  
-  <div class="phases">
-    <div class="phase">
-      <div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div>
-      <h3>Colostro</h3>
-      <b>1º ao 6º dia</b>
-      <p>Amarelado, transparente e riquíssimo em anticorpos e proteínas protetoras.</p>
-    </div>
-    <div class="phase">
-      <div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div>
-      <h3>Transição</h3>
-      <b>6º ao 14º dia</b>
-      <p>Mais denso e volumoso, rico em gorduras boas e nutrientes essenciais.</p>
-    </div>
-    <div class="phase">
-      <div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div>
-      <h3>Maduro</h3>
-      <b>Do 15º dia em diante</b>
-      <p>Mais consistente e esbranquiçado, perfeito e completo para o bebê.</p>
-    </div>
-  </div>
-
-  <div class="myth">
-    <h3><small>PERGUNTA FREQUENTE</small>Existe leite materno fraco?</h3>
-    <div>
-      <p><b>Não existe leite fraco.</b> Nem a cor, nem a consistência, nem a transparência determinam a qualidade do leite.</p>
-      <p>O corpo produz a quantidade ideal de água, calorias, vitaminas e anticorpos para cada etapa.</p>
-    </div>
-  </div>
-
-  <div class="band">
-    <span class="ico">🫗</span>
-    <div>
-      <b>O peito é fábrica, não reservatório!</b>
-      O leite não fica guardado esperando a mamada; ele é produzido ativamente na hora em que o bebê suga.
-    </div>
-  </div>
-`,
-
 latch:()=>`
-  <h2>A pega</h2>
-  <p class="sub">Amamentar deve ser prazeroso e sem dor.</p>
+  <h2>A pega e as Posições</h2>
+  <p class="sub">Amamentar deve ser confortável e sem dor.</p>
   
   <div class="sec">Posições para amamentar</div>
   <div class="positions">
-    ${positionArt('Tradicional')}
-    ${positionArt('Invertida')}
-    ${positionArt('Deitada de lado')}
-    ${positionArt('Cavalinho')}
+    <figure class="position"><img src="watermarked_img_9173676002290239426.jpg" alt="Posição Tradicional"><figcaption>Tradicional (Berço)</figcaption></figure>
+    <figure class="position"><img src="watermarked_img_14736660755103316541.jpg" alt="Posição Invertida"><figcaption>Invertida (Sob o braço)</figcaption></figure>
+    <figure class="position"><img src="watermarked_img_10903718117931793087.jpg" alt="Posição Deitada de Lado"><figcaption>Deitada de lado</figcaption></figure>
+    <figure class="position"><img src="watermarked_img_11311195501777505836.jpg" alt="Posição Cavalinho"><figcaption>Cavalinho (Vertical)</figcaption></figure>
   </div>
 
-  <div class="sec">Sinais observáveis da pega</div>
-  ${latchDiagram()}
+  <div class="sec">Anatomia da pega correta</div>
+  <img src="watermarked_img_9046284178623232699.jpg" alt="Diagrama da Pega Correta" class="art-img">
 
   <div class="duo">
     <div class="listbox">
@@ -836,77 +222,11 @@ latch:()=>`
   </div>
 `,
 
-pain:()=>`
-  <h2>Quando dói</h2>
-  <p class="sub">Identificar rápido evita complicações.</p>
-  
-  <div class="condition amber">
-    <h3>🩹 Fissura mamilar</h3>
-    <div class="body">
-      ${clinicalBreast('fissura')}
-      <ul class="clean">
-        <li>Corrija a pega imediatamente com auxílio da equipe</li>
-        <li>Varie as posições de amamentação</li>
-        <li>Inicie a mamada pelo lado menos dolorido</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="condition">
-    <h3>🫗 Peito muito cheio (Ingurgitamento)</h3>
-    <div class="body">
-      ${clinicalBreast('cheio')}
-      <ul class="clean">
-        <li>Mantenha a livre demanda sem limitar o tempo</li>
-        <li>Faça massagens suaves circulares antes de oferecer</li>
-        <li>Realize ordenha de alívio da aréola se estiver muito tensa</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="condition red">
-    <h3>🤒 Mastite (Mama inflamada)</h3>
-    <div class="body">
-      ${clinicalBreast('mastite')}
-      <ul class="clean">
-        <li>Procure a UBS no mesmo dia para iniciar tratamento</li>
-        <li>Não pare de amamentar no peito afetado</li>
-        <li>O esvaziamento frequente auxilia na cura da inflamação</li>
-      </ul>
-    </div>
-  </div>
-`,
-
-amount:()=>`
-  <h2>Quanto o bebê mama</h2>
-  <p class="sub">A capacidade gástrica é muito pequena nos primeiros dias.</p>
-  
-  <div class="chart">
-    <div class="stomachs">
-      <div class="stomach"><div class="fruit f1">🍒</div><b>1 dia</b><span class="ml">5–7 mL</span><small>cereja</small></div>
-      <div class="stomach"><div class="fruit f2">🌰</div><b>3 dias</b><span class="ml">22–27 mL</span><small>noz</small></div>
-      <div class="stomach"><div class="fruit f3">🍑</div><b>1 semana</b><span class="ml">45–60 mL</span><small>pêssego</small></div>
-      <div class="stomach"><div class="fruit f4">🥚</div><b>1 mês</b><span class="ml">80–150 mL</span><small>ovo grande</small></div>
-    </div>
-  </div>
-
-  <div class="card">
-    <b>Mamar frequentemente é biológico</b>
-    O leite materno é de digestão rápida e o estômago do bebê é pequeno. Mamar muitas vezes não significa falta de leite.
-  </div>
-
-  <div class="sec">Como saber se está satisfeito</div>
-  <div class="grid">
-    <div class="icon-card green"><span class="ico">💧</span><b>Fraldas molhadas</b><small>6 ou mais por dia</small></div>
-    <div class="icon-card green"><span class="ico">⚖️</span><b>Ganho de peso</b><small>constante nas consultas</small></div>
-    <div class="icon-card green"><span class="ico">😌</span><b>Tranquilidade</b><small>solta a mama relaxado</small></div>
-  </div>
-`,
-
 milk:()=>`
   <h2>Tirar o leite</h2>
   <p class="sub">Ordenha manual e armazenamento seguro.</p>
-  ${milkingArt()}
+  
+  <img src="watermarked_img_14439845367278928975.jpg" alt="Técnica de Ordenha Manual" class="art-img">
   
   <div class="hero-number">
     <strong>20–30</strong>
@@ -918,152 +238,6 @@ milk:()=>`
     <b>Dica de ouro</b>
     Armazene em frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos.
   </div>
-`,
-
-sleep:()=>`
-  <h2>O sono do bebê</h2>
-  <p class="sub">O amadurecimento dos ciclos de sono.</p>
-  
-  <div class="timeline">
-    <div class="step"><span class="dot">0</span><h3>Recém-nascido</h3><div>Ciclos curtinhos (40-50 min). Acorda para mamar e se aconchegar dia e noite.</div></div>
-    <div class="step"><span class="dot">2</span><h3>2 a 3 meses</h3><div>Começa a reconhecer dia e noite através da luz natural e rotina da casa.</div></div>
-    <div class="step"><span class="dot">6</span><h3>6 a 9 meses</h3><div>Sono noturno mais contínuo e consolidado para a maioria das crianças.</div></div>
-  </div>
-`,
-
-returns:()=>`
-  <h2>Quando o leite volta</h2>
-  <p class="sub">Regurgitação fisiológica versus sinais de alerta.</p>
-  ${burpArt()}
-  
-  <div class="card ok">
-    <b>Regurgitar é normal</b>
-    A válvula do estômago ainda está imatura. Se o bebê ganha peso e não sente dor ao golfar, é esperado.
-  </div>
-
-  <div class="sec">Sinais de que precisa de avaliação médica</div>
-  <div class="grid">
-    <div class="icon-card red"><span class="ico">📉</span><b>Não ganha peso</b></div>
-    <div class="icon-card red"><span class="ico">🤮</span><b>Vômito em jato</b></div>
-    <div class="icon-card red"><span class="ico">😣</span><b>Choro de dor forte</b></div>
-  </div>
-`,
-
-myths:()=>`
-  <h2>Mitos e verdades</h2>
-  <p class="sub">Ciência desmistificando crenças populares.</p>
-  
-  <div class="myth">
-    <h3><small>MITO</small>“Preciso comer pouco para não dar cólica”</h3>
-    <div>Não há necessidade de cortar feijão, chocolate ou alimentos saudáveis sem orientação profissional específica.</div>
-  </div>
-
-  <div class="myth">
-    <h3><small>MITO</small>“Amamentar faz o seio cair”</h3>
-    <div>A flacidez está relacionada à genética e às mudanças naturais do volume da gravidez, não ao ato de amamentar.</div>
-  </div>
-
-  <div class="prevent">
-    <h3>O que pode prevenir?</h3>
-    <div>
-      <p><b>Usar sutiã confortável com boa sustentação:</b> Alivia a tensão muscular nas costas e mantém o conforto.</p>
-      <p><b>Manter alimentação saudável e hidratação:</b> Ajuda na recuperação pós-parto.</p>
-    </div>
-  </div>
-`,
-
-formula:()=>`
-  <h2>Fórmula infantil</h2>
-  <p class="sub">Preparo rigoroso para segurança do bebê.</p>
-  
-  <div class="hero-number">
-    <strong>1 : 30</strong>
-    <b>proporção padrão</b>
-    <p>1 medida rasa para cada 30 mL de água fervida morna</p>
-  </div>
-
-  <div class="formula-flow">
-    <div class="formula-step"><span class="ico">🚰</span><b>Água fervida</b><span>coloque primeiro</span></div>
-    <div class="formula-step"><span class="ico">🥄</span><b>Medida rasa</b><span>sem excesso de pó</span></div>
-    <div class="formula-step"><span class="ico">🔄</span><b>Misture bem</b><span>sem grumos</span></div>
-    <div class="formula-step"><span class="ico">🍼</span><b>Ofereça logo</b><span>descarte as sobras</span></div>
-  </div>
-
-  <div class="card danger">
-    <b>Atenção aos riscos</b>
-    Nunca adicione açúcar, mel, farinhas ou mucilagens na mamadeira de fórmula infantil.
-  </div>
-`,
-
-drugs:()=>`
-  <h2>Álcool e outras substâncias</h2>
-  <p class="sub">Orientações de segurança para a lactação.</p>
-  
-  <div class="sec">Uso contraindicado</div>
-  <div class="substances">
-    <div class="substance"><h3>Cocaína e crack</h3><div>Suspender amamentação por no mínimo 24h e buscar apoio na unidade.</div></div>
-    <div class="substance"><h3>Inalantes</h3><div>Suspender amamentação por 7 dias.</div></div>
-    <div class="substance"><h3>Heroína e LSD</h3><div>Contraindicado. Procure a equipe de saúde imediatamente.</div></div>
-  </div>
-
-  <div class="sec">Uso de risco</div>
-  <div class="substances">
-    <div class="substance amber"><h3>Álcool</h3><div>O ideal é não consumir; caso consuma 1 dose, aguardar no mínimo 2 horas.</div></div>
-    <div class="substance amber"><h3>Maconha</h3><div>Substâncias ativas permanecem muito tempo no leite. Converse com a UBS.</div></div>
-  </div>
-  
-  <div class="source"><b>Fonte:</b> Caderno do Ministério da Saúde: <i>Amamentação e Uso de Medicamentos e Outras Substâncias (2025)</i>.</div>
-`,
-
-food:()=>`
-  <h2>A comida chega</h2>
-  <p class="sub">Introdução alimentar aos 6 meses completos.</p>
-  ${guide()}
-  <div class="hero-number"><strong>6</strong><b>meses completos</b><p>Até lá, exclusivamente leite de peito ou fórmula.</p></div>
-  ${plateArt()}
-
-  <div class="sec">Alimentos permitidos no prato</div>
-  <div class="grid">
-    <div class="icon-card green"><span class="ico">🍌</span><b>Frutas</b></div>
-    <div class="icon-card green"><span class="ico">🥕</span><b>Legumes</b></div>
-    <div class="icon-card green"><span class="ico">🍚</span><b>Arroz e feijão</b></div>
-    <div class="icon-card green"><span class="ico">🥩</span><b>Carnes e ovos</b></div>
-    <div class="icon-card green"><span class="ico">💧</span><b>Água potável</b></div>
-  </div>
-
-  <div class="sec">Proibido antes dos 2 anos</div>
-  <div class="grid">
-    <div class="icon-card red"><span class="ico">🍬</span><b>Açúcar e mel</b></div>
-    <div class="icon-card red"><span class="ico">🧃</span><b>Sucos e ultraprocessados</b></div>
-    <div class="icon-card red"><span class="ico">🥣</span><b>Mucilons e engrossantes</b></div>
-  </div>
-`,
-
-alerts:()=>`
-  <h2>Procure a UBS</h2>
-  <p class="sub">Não hesite em buscar atendimento se notar sinais anormais.</p>
-  
-  <div class="grid">
-    <div class="icon-card red"><span class="ico">📉</span><b>Bebê emagrecendo</b></div>
-    <div class="icon-card red"><span class="ico">💧</span><b>Pouca urina no dia</b></div>
-    <div class="icon-card red"><span class="ico">😴</span><b>Muito sonolento / sem sugar</b></div>
-    <div class="icon-card red"><span class="ico">🤒</span><b>Febre com dor mamária</b></div>
-    <div class="icon-card red"><span class="ico">😣</span><b>Fissura sangrante com dor</b></div>
-    <div class="icon-card red"><span class="ico">🤮</span><b>Vômitos em jato contínuos</b></div>
-  </div>
-
-  <div class="card">
-    <b>Saúde mental materna</b>
-    Sensação contínua de desânimo, choro persistente ou sobrecarga merecem cuidado e acolhimento multiprofissional.
-  </div>
-
-  <a class="linkcard" href="tel:+554836219556">
-    <span class="ico">📞</span>
-    <span><b>Ligar para a UBS Fábio Silva</b><small>(48) 3621-9556</small></span>
-    <span class="arrow">›</span>
-  </a>
-  
-  <button class="alert-button" data-go="contact" style="background:var(--rx)">Ver localização e horários</button>
 `,
 
 contact:()=>`
@@ -1083,14 +257,15 @@ contact:()=>`
     </div>
   </div>
 
-  ${link('📍','Rua Pedro Esmeraldino de Menezes, s/n','Bairro Fábio Silva · Tubarão/SC','https://maps.app.goo.gl/np4QbUTAV5NUutV48')}
+  <a class="linkcard" href="https://maps.app.goo.gl/np4QbUTAV5NUutV48" target="_blank" rel="noopener">
+    <span class="ico">📍</span>
+    <span><b>Rua Pedro Esmeraldino de Menezes, s/n</b><small>Bairro Fábio Silva · Tubarão/SC</small></span>
+    <span class="arrow">›</span>
+  </a>
   
   <div class="map">
     <iframe src="https://www.google.com/maps?q=Rua+Pedro+Esmeraldino+de+Menezes,+F%C3%A1bio+Silva,+Tubar%C3%A3o+-+SC&output=embed" loading="lazy" title="Mapa da UBS Fábio Silva"></iframe>
   </div>
-
-  ${link('🗺️','Abrir no aplicativo de mapas','Traçar rota até a unidade','https://maps.app.goo.gl/np4QbUTAV5NUutV48')}
-  ${guide()}
 
   <div class="footer">
     Material educativo — <b>Mostra PMSUS 2026.2</b><br>
@@ -1101,11 +276,7 @@ contact:()=>`
 };
 
 const titles={
-  home:'Amamentação',first:'Os primeiros dias',phases:'Fases do leite',
-  myths:'Mitos e verdades',latch:'A pega',amount:'Quanto o bebê mama',
-  pain:'Quando dói',milk:'Tirar o leite',sleep:'Sono do bebê',
-  returns:'Quando o leite volta',drugs:'Álcool e substâncias',formula:'Fórmula infantil',
-  food:'A comida chega',alerts:'Procure a UBS',contact:'Contato'
+  home:'Amamentação',latch:'A pega e Posições',milk:'Tirar o leite',contact:'Contato'
 };
 
 const app=document.getElementById('app'),historyStack=[];let current='home';
@@ -1115,7 +286,7 @@ function render(id,push=true){
   if(push&&id!==current)historyStack.push(current);
   current=id;
   app.innerHTML=`<section class="screen on" id="${id}">${screens[id]()}</section>`;
-  document.getElementById('brand').innerHTML=`${titles[id]}<small>Cultura, mitos e saberes</small>`;
+  document.getElementById('brand').innerHTML=`${titles[id]||'Amamentação'}<small>Cultura, mitos e saberes</small>`;
   document.getElementById('back').classList.toggle('show',id!=='home');
   if(id==='home')historyStack.length=0;
   window.scrollTo(0,0);
