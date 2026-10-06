@@ -69,11 +69,12 @@ h2{font-size:clamp(26px,3vw,52px);margin-bottom:8px}
 .icon-card b{display:block;color:var(--rx)}
 .icon-card small{display:block;color:var(--tx2);font-weight:600}
 
-/* ESTILIZAÇÃO DAS IMAGENS */
-.art-img{width:100%;height:auto;display:block;border-radius:22px;border:2px solid var(--lil);margin-bottom:18px;box-shadow:0 4px 20px rgba(121,75,158,.08);object-fit:cover}
+/* ART & SVG STYLING */
+.art{width:100%;overflow:hidden;border:2px solid var(--lil);border-radius:22px;background:linear-gradient(145deg,#fcf8fd,#f4e9f9);margin-bottom:18px;box-shadow:0 4px 20px rgba(121,75,158,.08)}
+.art svg{display:block;width:100%;height:auto}
+.art.square{aspect-ratio:1/1;min-height:0;margin:0;border-radius:20px}
 .positions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px;margin-bottom:20px}
 .position{display:flex;flex-direction:column;align-items:center}
-.position img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:2px solid var(--lil)}
 .position figcaption{text-align:center;color:var(--rx);font-weight:900;margin-top:9px;font-size:1.05em}
 
 .duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-bottom:16px}
@@ -85,6 +86,19 @@ ul.clean{list-style:none}
 ul.clean li{padding:8px 0 8px 26px;border-bottom:1px solid #00000012;position:relative;font-weight:600}
 ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-weight:900;font-size:18px}
 .adjust ul.clean li:before{content:'!';color:var(--am);font-weight:900}
+
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:15px;background:var(--rx);padding:20px;border-radius:24px;margin-bottom:18px}
+.phase{text-align:center;background:var(--rx2);color:#fff;border-radius:18px;padding:18px;display:flex;flex-direction:column;align-items:center}
+.bottle{width:74px;margin:0 auto 12px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.15))}
+.cap{height:14px;width:46px;margin:auto;background:#4e296e;border-radius:5px 5px 2px 2px}
+.neck{height:16px;width:34px;margin:auto;border-left:3px solid #ffffffaa;border-right:3px solid #ffffffaa;background:rgba(255,255,255,.1)}
+.jar{height:102px;border:3px solid #ffffffaa;border-radius:14px 14px 10px 10px;background:#f5e5a2;position:relative;overflow:hidden}
+.jar::after{content:'';position:absolute;left:6px;top:6px;width:8px;height:65px;background:rgba(255,255,255,.45);border-radius:10px}
+.phase:nth-child(2) .jar{background:#f8f2de}
+.phase:nth-child(3) .jar{background:#fdfdfe}
+.phase h3{text-transform:uppercase;font-size:1.05em;margin-top:6px;letter-spacing:.5px}
+.phase b{display:block;margin:3px 0 6px;color:#f3d9ff;font-size:.95em}
+.phase p{font-size:.88em;opacity:.95;line-height:1.35}
 
 .stomachs{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;max-width:850px;margin:0 auto}
 .stomach{text-align:center;background:var(--rx);color:#fff;border-radius:18px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
@@ -126,9 +140,70 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 <nav class="nav"><div class="inner"><button class="back" id="back">‹ Voltar</button><button class="home" id="home">🏠 Início</button></div></nav>
 
 <script>
+const svg=(body,v='0 0 600 400')=>`<svg viewBox="${v}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">${body}</svg>`;
+const art=(body,label,cls='',v='0 0 600 400')=>`<div class="art ${cls}" role="img" aria-label="${label}">${svg(body,v)}</div>`;
+
+/* ILUSTRAÇÃO DA CAPA (VETORIZADA LIMPA) */
+function coverArt(){
+  return art(`
+    <defs>
+      <linearGradient id="gBg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff8fc"/><stop offset="1" stop-color="#f2e2f6"/></linearGradient>
+    </defs>
+    <rect width="600" height="400" rx="22" fill="url(#gBg)"/>
+    <path d="M120 200 C80 120 130 50 140 20 C155 60 140 120 120 200 Z" fill="#794b9e" opacity=".7"/>
+    <path d="M480 200 C520 120 470 50 460 20 C445 60 460 120 480 200 Z" fill="#794b9e" opacity=".7"/>
+    <circle cx="140" cy="30" r="14" fill="#d84a75"/>
+    <circle cx="460" cy="30" r="14" fill="#d84a75"/>
+    <!-- Almofada e Mãe Acolhedora -->
+    <ellipse cx="300" cy="310" rx="150" ry="42" fill="#e66d8f" stroke="#2b1928" stroke-width="4"/>
+    <path d="M225 180 C215 250 220 310 240 330 C270 340 330 340 360 330 C380 310 385 250 375 180 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
+    <path d="M225 185 L285 245 L355 185 L375 220 C365 295 345 315 300 315 C255 315 235 295 225 220 Z" fill="#ffffff" stroke="#2b1928" stroke-width="4"/>
+    <!-- Bebê -->
+    <g transform="translate(230 220)">
+      <path d="M45 40 C75 35 125 45 130 85 C120 105 70 100 40 85 Z" fill="#d84a75" stroke="#2b1928" stroke-width="4"/>
+      <circle cx="35" cy="40" r="28" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
+      <path d="M15 32 C20 15 45 15 55 25" fill="#3d2338"/>
+      <path d="M40 38 Q46 45 52 38" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- Rosto Mãe -->
+    <circle cx="300" cy="100" r="38" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/>
+    <path d="M265 95 C260 50 340 50 335 95 C330 75 270 75 265 95 Z" fill="#3d2338" stroke="#2b1928" stroke-width="3"/>
+    <path d="M292 92 Q296 98 300 92" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
+    <path d="M290 114 Q300 122 310 114" fill="none" stroke="#2b1928" stroke-width="3" stroke-linecap="round"/>
+  `, 'Capa ilustrada de amamentação');
+}
+
+/* POSIÇÕES DE AMAMENTAÇÃO */
+function positionArt(type){
+  let inner='';
+  if(type==='Tradicional'){
+    inner=`<rect width="400" height="400" rx="20" fill="#f8eefb"/><path d="M120 160 C120 250 150 340 200 350 C250 340 280 250 280 160 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/><path d="M120 220 L280 220 L280 360 L120 360 Z" fill="#d84a75" stroke="#2b1928" stroke-width="4"/><circle cx="200" cy="120" r="38" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/><path d="M170 120 C165 70 235 70 230 120 Z" fill="#3d2338"/><g transform="translate(160 210) rotate(-15)"><rect x="20" y="20" width="75" height="45" rx="20" fill="#ffffff" stroke="#2b1928" stroke-width="4"/><circle cx="15" cy="35" r="22" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/></g>`;
+  } else if(type==='Invertida'){
+    inner=`<rect width="400" height="400" rx="20" fill="#f8eefb"/><ellipse cx="280" cy="300" rx="70" ry="35" fill="#e66d8f" stroke="#2b1928" stroke-width="4"/><path d="M110 160 C110 250 140 340 180 350 C220 340 250 250 250 160 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/><path d="M110 220 L250 220 L250 360 L110 360 Z" fill="#794b9e" stroke="#2b1928" stroke-width="4"/><circle cx="180" cy="120" r="38" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/><path d="M150 120 C145 70 215 70 210 120 Z" fill="#3d2338"/><g transform="translate(200 240) rotate(20)"><rect x="25" y="15" width="80" height="42" rx="18" fill="#ffffff" stroke="#2b1928" stroke-width="4"/><circle cx="20" cy="30" r="22" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/></g>`;
+  } else if(type==='Deitada de lado'){
+    inner=`<rect width="400" height="400" rx="20" fill="#f8eefb"/><path d="M30 260 L370 260 L370 370 L30 370 Z" fill="#9b6cac" stroke="#2b1928" stroke-width="4"/><circle cx="120" cy="165" r="32" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/><path d="M140 190 C180 200 240 220 300 240 L280 300 L140 280 Z" fill="#ffffff" stroke="#2b1928" stroke-width="4"/><g transform="translate(160 210)"><rect x="25" y="15" width="70" height="40" rx="16" fill="#f07598" stroke="#2b1928" stroke-width="4"/><circle cx="20" cy="30" r="19" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/></g>`;
+  } else if(type==='Cavalinho'){
+    inner=`<rect width="400" height="400" rx="20" fill="#f8eefb"/><circle cx="200" cy="100" r="38" fill="#b87352" stroke="#2b1928" stroke-width="4"/><path d="M165 95 C160 50 240 50 235 95 Z" fill="#3d2338"/><path d="M130 150 C130 240 150 340 200 350 C250 340 270 240 270 150 Z" fill="#b87352" stroke="#2b1928" stroke-width="4"/><path d="M130 180 L270 260 L240 360 L130 320 Z" fill="#d84a75" stroke="#2b1928" stroke-width="4"/><g transform="translate(180 180)"><rect x="15" y="40" width="50" height="70" rx="20" fill="#ffffff" stroke="#2b1928" stroke-width="4"/><circle cx="35" cy="30" r="24" fill="#fcd3b6" stroke="#2b1928" stroke-width="4"/></g>`;
+  }
+  return `<figure class="position">${art(inner, 'Posição ' + type, 'square', '0 0 400 400')}<figcaption>${type}</figcaption></figure>`;
+}
+
+/* DIAGRAMA DA PEGA */
+function latchDiagram(){
+  return art(`
+    <rect width="600" height="340" rx="22" fill="#ffffff"/>
+    <path d="M80 340 C100 200 150 110 240 110 C290 110 320 140 330 170 C310 190 290 230 240 250 C180 270 120 330 100 340 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
+    <circle cx="325" cy="175" r="14" fill="#c9775e"/>
+    <g transform="translate(230 40)">
+      <path d="M90 70 C150 50 230 90 230 170 C230 240 160 280 95 240 C85 220 70 215 50 215 C60 190 75 185 80 160 C75 140 40 135 45 110 C65 110 80 90 90 70 Z" fill="#fcd3b6" stroke="#2b1928" stroke-width="4.5"/>
+      <path d="M120 60 C170 45 220 70 230 110 Z" fill="#3d2338"/>
+    </g>
+  `, 'Diagrama anatômico da pega correta');
+}
+
 const screens={
 home:()=>`
-  <img src="capa.jpg" alt="Amamentação: Cultura, mitos e saberes" class="art-img">
+  ${coverArt()}
   <h1 style="text-align:center">Amamentação</h1>
   <p class="sub" style="text-align:center">Cultura, mitos e saberes</p>
   
@@ -177,168 +252,75 @@ home:()=>`
 first:()=>`
   <h2>Os primeiros dias</h2>
   <p class="sub">Apojadura e adaptação inicial.</p>
-  
-  <div class="hero-number">
-    <strong>3º–5º</strong>
-    <b>dia após o parto</b>
-    <p>É quando ocorre a descida do leite (apojadura).</p>
-  </div>
-
-  <div class="card ok">
-    <b>Pele a pele & Livre demanda</b>
-    O contato direto do bebê no peito estimula a liberação dos hormônios naturais que auxiliam na descida rápida do leite.
-  </div>
-
-  <div class="sec">Rede de apoio</div>
-  <div class="grid">
-    <div class="icon-card green"><span class="ico">👨‍👩‍👧</span><b>Família</b><small>ajuda e apoia</small></div>
-    <div class="icon-card green"><span class="ico">🏥</span><b>Equipe UBS</b><small>tira dúvidas</small></div>
-    <div class="icon-card red"><span class="ico">🗣️</span><b>"Pitacos"</b><small>desconfie de mitos</small></div>
-  </div>
+  <div class="hero-number"><strong>3º–5º</strong><b>dia após o parto</b><p>É quando ocorre a descida do leite (apojadura).</p></div>
+  <div class="card ok"><b>Pele a pele & Livre demanda</b>O contato direto do bebê no peito estimula a liberação dos hormônios naturais que auxiliam na descida rápida do leite.</div>
 `,
 
 phases:()=>`
   <h2>Fases do leite</h2>
-  <p class="sub">O leite se transforma na medida exata do crescimento do bebê.</p>
-  
-  <img src="fases-do-leite.jpg" alt="Fases do Leite Materno" class="art-img">
-
-  <div class="myth">
-    <h3><small>PERGUNTA FREQUENTE</small>Existe leite materno fraco?</h3>
-    <div>
-      <p><b>Não existe leite fraco.</b> Nem a cor, nem a consistência, nem a transparência determinam a qualidade do leite.</p>
-      <p>O corpo produz a quantidade ideal de água, calorias, vitaminas e anticorpos para cada etapa.</p>
-    </div>
-  </div>
-
-  <div class="band">
-    <span class="ico">🫗</span>
-    <div>
-      <b>O peito é fábrica, não reservatório!</b>
-      O leite é produzido ativamente na hora em que o bebê suga.
-    </div>
+  <p class="sub">O leite se transforma na medida exata do crescimento.</p>
+  <div class="phases">
+    <div class="phase"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div><h3>Colostro</h3><b>1º ao 6º dia</b><p>Rico em anticorpos e proteínas protetoras.</p></div>
+    <div class="phase"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div><h3>Transição</h3><b>6º ao 14º dia</b><p>Mais denso e volumoso, rico em gorduras boas.</p></div>
+    <div class="phase"><div class="bottle"><div class="cap"></div><div class="neck"></div><div class="jar"></div></div><h3>Maduro</h3><b>Do 15º dia</b><p>Completo e consistente para o bebê.</p></div>
   </div>
 `,
 
 latch:()=>`
   <h2>A pega e as Posições</h2>
   <p class="sub">Amamentar deve ser confortável e sem dor.</p>
-  
   <div class="sec">Posições para amamentar</div>
   <div class="positions">
-    <figure class="position"><img src="posicao-tradicional.jpg" alt="Posição Tradicional"><figcaption>Tradicional (Berço)</figcaption></figure>
-    <figure class="position"><img src="posicao-invertida.jpg" alt="Posição Invertida"><figcaption>Invertida (Sob o braço)</figcaption></figure>
-    <figure class="position"><img src="posicao-deitada.jpg" alt="Posição Deitada de Lado"><figcaption>Deitada de lado</figcaption></figure>
-    <figure class="position"><img src="posicao-cavalinho.jpg" alt="Posição Cavalinho"><figcaption>Cavalinho (Vertical)</figcaption></figure>
+    ${positionArt('Tradicional')}
+    ${positionArt('Invertida')}
+    ${positionArt('Deitada de lado')}
+    ${positionArt('Cavalinho')}
   </div>
-
   <div class="sec">Anatomia da pega correta</div>
-  <img src="pega-correta.jpg" alt="Diagrama da Pega Correta" class="art-img">
-
+  ${latchDiagram()}
   <div class="duo">
-    <div class="listbox">
-      <h3>✓ Sinais de boa pega</h3>
-      <ul class="clean">
-        <li>Boca bem aberta (abocanha quase toda a aréola)</li>
-        <li>Queixo encostado na mama</li>
-        <li><b>Nariz livre e desobstruído</b></li>
-        <li>Lábio inferior virado para fora (peixinho)</li>
-        <li>Ouve-se o bebê engolindo o leite</li>
-        <li>Não provoca dor ou fissura</li>
-      </ul>
-    </div>
-    <div class="listbox adjust">
-      <h3>! Sinais de ajuste</h3>
-      <ul class="clean">
-        <li>Boca pouco aberta (pega só o mamilo)</li>
-        <li>Nariz abafado contra a mama</li>
-        <li>Bochechas encovadas ao sugar</li>
-        <li>Estalos na sucção</li>
-        <li>Mamilo sai achatado ou deformado</li>
-        <li>Dor forte ou sangramento</li>
-      </ul>
-    </div>
+    <div class="listbox"><h3>✓ Sinais de boa pega</h3><ul class="clean"><li>Boca bem aberta</li><li>Queixo encostado</li><li><b>Nariz livre</b></li><li>Lábio virado para fora</li></ul></div>
+    <div class="listbox adjust"><h3>! Sinais de ajuste</h3><ul class="clean"><li>Boca pouco aberta</li><li>Nariz abafado</li><li>Dor forte</li></ul></div>
   </div>
 `,
 
 pain:()=>`
   <h2>Quando dói</h2>
-  <p class="sub">Identificar rápido evita complicações e traz conforto.</p>
-  
-  <img src="quando-doi.jpg" alt="Cuidados e Condições da Mama" class="art-img">
-
-  <div class="card warn">
-    <b>Fissura Mamilar</b>
-    Corrija a pega imediatamente com auxílio da equipe e comece a mamada pelo lado menos dolorido.
-  </div>
-
-  <div class="card info">
-    <b>Peito Cheio (Ingurgitamento)</b>
-    Mantenha a livre demanda e faça massagens suaves circulares antes de oferecer o peito.
-  </div>
-
-  <div class="card danger">
-    <b>Mastite (Inflamação)</b>
-    Procure a UBS no mesmo dia. Não pare de amamentar no peito afetado, pois o esvaziamento auxilia na cura.
-  </div>
+  <p class="sub">Identificar rápido evita complicações.</p>
+  <div class="card warn"><b>Fissura Mamilar</b>Corrija a pega imediatamente com auxílio da equipe e inicie pelo lado menos dolorido.</div>
+  <div class="card info"><b>Peito Cheio (Ingurgitamento)</b>Mantenha a livre demanda e faça massagens suaves antes de oferecer.</div>
+  <div class="card danger"><b>Mastite (Inflamação)</b>Procure a UBS no mesmo dia. Não pare de amamentar no peito afetado.</div>
 `,
 
 amount:()=>`
   <h2>Quanto o bebê mama</h2>
   <p class="sub">A capacidade gástrica cresce aos poucos.</p>
-  
   <div class="stomachs">
-    <div class="stomach"><div class="fruit f1">🍒</div><b>1 dia</b><span class="ml">5–7 mL</span><small>cereja</small></div>
-    <div class="stomach"><div class="fruit f2">🌰</div><b>3 dias</b><span class="ml">22–27 mL</span><small>noz</small></div>
-    <div class="stomach"><div class="fruit f3">🍑</div><b>1 semana</b><span class="ml">45–60 mL</span><small>pêssego</small></div>
-    <div class="stomach"><div class="fruit f4">🥚</div><b>1 mês</b><span class="ml">80–150 mL</span><small>ovo grande</small></div>
-  </div>
-
-  <div class="card ok" style="margin-top:20px">
-    <b>Como saber se o bebê está satisfeito</b>
-    6 ou mais fraldas molhadas por dia, ganho de peso constante e comportamento calmo após a mamada.
+    <div class="stomach"><div class="fruit f1">🍒</div><b>1 dia</b><span class="ml">5–7 mL</span></div>
+    <div class="stomach"><div class="fruit f2">🌰</div><b>3 dias</b><span class="ml">22–27 mL</span></div>
+    <div class="stomach"><div class="fruit f3">🍑</div><b>1 semana</b><span class="ml">45–60 mL</span></div>
+    <div class="stomach"><div class="fruit f4">🥚</div><b>1 mês</b><span class="ml">80–150 mL</span></div>
   </div>
 `,
 
 returns:()=>`
   <h2>Quando o leite volta</h2>
   <p class="sub">Regurgitação fisiológica versus sinais de alerta.</p>
-  
-  <img src="leite-que-volta.jpg" alt="Bebê no Ombro após a Mamada" class="art-img">
-
-  <div class="card ok">
-    <b>Regurgitar é normal</b>
-    A válvula do estômago do recém-nascido é imatura. Se o bebê ganha peso e não sente dor ao golfar, é um processo natural.
-  </div>
+  <div class="card ok"><b>Regurgitar é normal</b>A válvula do estômago ainda é imatura. Se o bebê ganha peso e não sente dor, é esperado.</div>
 `,
 
 milk:()=>`
   <h2>Tirar o leite</h2>
   <p class="sub">Ordenha manual e armazenamento seguro.</p>
-  
-  <img src="ordenha-manual.jpg" alt="Técnica de Ordenha Manual" class="art-img">
-  
-  <div class="hero-number">
-    <strong>20–30</strong>
-    <b>minutos em cada mama</b>
-    <p>com movimentos calmos e contínuos</p>
-  </div>
-
-  <div class="card info">
-    <b>Dica de armazenamento</b>
-    Armazene em frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos.
-  </div>
+  <div class="hero-number"><strong>20–30</strong><b>minutos em cada mama</b><p>movimentos calmos e contínuos</p></div>
+  <div class="card info"><b>Dica de ouro</b>Armazene em frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos.</div>
 `,
 
 food:()=>`
   <h2>A comida chega</h2>
   <p class="sub">Introdução alimentar aos 6 meses completos.</p>
-  
-  <img src="introducao-alimentar.jpg" alt="Prato de Introdução Alimentar" class="art-img">
-
-  <div class="hero-number"><strong>6</strong><b>meses completos</b><p>Até lá, exclusivamente leite materno ou fórmula.</p></div>
-
-  <div class="sec">O que oferecer no prato</div>
+  <div class="hero-number"><strong>6</strong><b>meses completos</b><p>Até lá, exclusivamente leite de peito ou fórmula.</p></div>
+  <div class="sec">Alimentos permitidos no prato</div>
   <div class="grid">
     <div class="icon-card green"><span class="ico">🍌</span><b>Frutas</b></div>
     <div class="icon-card green"><span class="ico">🥕</span><b>Legumes</b></div>
@@ -350,51 +332,37 @@ food:()=>`
 alerts:()=>`
   <h2>Procure a UBS</h2>
   <p class="sub">Busque atendimento sem hesitar se notar sinais anormais.</p>
-  
   <div class="grid">
     <div class="icon-card red"><span class="ico">📉</span><b>Bebê emagrecendo</b></div>
     <div class="icon-card red"><span class="ico">💧</span><b>Pouca urina no dia</b></div>
-    <div class="icon-card red"><span class="ico">😴</span><b>Muito sonolento / sem sugar</b></div>
+    <div class="icon-card red"><span class="ico">😴</span><b>Muito sonolento</b></div>
     <div class="icon-card red"><span class="ico">🤒</span><b>Febre com dor mamária</b></div>
-    <div class="icon-card red"><span class="ico">🤮</span><b>Vômitos em jato contínuos</b></div>
   </div>
-
   <a class="linkcard" href="tel:+554836219556" style="margin-top:20px">
     <span class="ico">📞</span>
     <span><b>Ligar para a UBS Fábio Silva</b><small>(48) 3621-9556</small></span>
     <span class="arrow">›</span>
   </a>
-  
   <button class="alert-button" data-go="contact" style="background:var(--rx)">Ver localização e horários</button>
 `,
 
 contact:()=>`
   <h2>UBS Fábio Silva</h2>
   <p class="sub">Atendimento e acolhimento em Tubarão/SC.</p>
-  
   <div class="contact-cards">
     <a class="contact-item" href="tel:+554836219556">
-      <span class="ico">📞</span>
-      <div class="tag">Telefone</div>
-      <div class="val">(48) 3621-9556</div>
+      <span class="ico">📞</span><div class="tag">Telefone</div><div class="val">(48) 3621-9556</div>
     </a>
     <div class="contact-item">
-      <span class="ico">🕗</span>
-      <div class="tag">Horário de Atendimento</div>
-      <div class="val">07:00 às 12:00<br>13:00 às 16:00</div>
+      <span class="ico">🕗</span><div class="tag">Horário de Atendimento</div><div class="val">07:00 às 12:00<br>13:00 às 16:00</div>
     </div>
   </div>
-
   <a class="linkcard" href="https://maps.app.goo.gl/np4QbUTAV5NUutV48" target="_blank" rel="noopener">
-    <span class="ico">📍</span>
-    <span><b>Rua Pedro Esmeraldino de Menezes, s/n</b><small>Bairro Fábio Silva · Tubarão/SC</small></span>
-    <span class="arrow">›</span>
+    <span class="ico">📍</span><span><b>Rua Pedro Esmeraldino de Menezes, s/n</b><small>Bairro Fábio Silva · Tubarão/SC</small></span><span class="arrow">›</span>
   </a>
-  
   <div class="map">
     <iframe src="https://www.google.com/maps?q=Rua+Pedro+Esmeraldino+de+Menezes,+F%C3%A1bio+Silva,+Tubar%C3%A3o+-+SC&output=embed" loading="lazy" title="Mapa da UBS Fábio Silva"></iframe>
   </div>
-
   <div class="footer">
     Material educativo — <b>Mostra PMSUS 2026.2</b><br>
     TURMA 49B · UNISUL · UBS Fábio Silva<br>
