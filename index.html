@@ -35,6 +35,8 @@ h2{font-size:clamp(26px,3vw,52px);margin-bottom:8px}
 .sub{color:var(--tx2);font-weight:600;margin-bottom:24px}
 .sec{margin:30px auto 14px;border-bottom:2px solid var(--bd);padding-bottom:7px;color:var(--rx2);font-size:.76em;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.grid + .card,.grid + .band,.positions + .card,.stomachs + .card{margin-top:18px}
+.grid + .sec{margin-top:34px}
 .menu-group{margin:28px auto}
 .group-title{display:flex;align-items:center;gap:10px;color:var(--rx);font-weight:900;text-transform:uppercase;margin-bottom:12px}
 .num{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--rx);color:#fff;font-size:16px}
@@ -94,11 +96,30 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .linkcard b{display:block;color:var(--rx);font-size:1.05em}
 .linkcard small{color:var(--tx2);font-weight:500}
 .linkcard .arrow{margin-left:auto;color:var(--rx2);font-size:30px;font-weight:900}
+.linkcard.feature{background:var(--lc);border-color:var(--rx2);border-width:3px}
+.linkcard.feature .ico{font-size:42px}
+.linkcard.feature b{font-size:1.12em}
+/* CARD DE AVALIAÇÃO */
+.rate{display:flex;align-items:center;gap:16px;padding:clamp(18px,2vw,26px);border:3px solid var(--rs);background:var(--rsc);border-radius:19px;margin-top:18px;margin-bottom:16px;transition:.18s;cursor:pointer}
+.rate:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(216,74,117,.18)}
+.rate .ico{font-size:clamp(36px,4vw,48px);flex:none;line-height:1}
+.rate b{display:block;color:var(--rs);font-size:1.12em;font-weight:900}
+.rate small{display:block;color:var(--tx2);font-weight:600}
+.rate .arrow{margin-left:auto;color:var(--rs);font-size:30px;font-weight:900}
+/* QR CODE */
+.qr-card{display:block;border:3px solid var(--rs);background:#fff;border-radius:22px;padding:clamp(18px,2.4vw,30px);text-align:center;margin-bottom:16px;transition:.18s}
+.qr-card:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(216,74,117,.18)}
+.qr-card b{display:block;color:var(--rs);font-size:1.15em;font-weight:900;margin-bottom:4px}
+.qr-card .hint{display:block;color:var(--tx2);font-weight:600;font-size:.88em;margin-bottom:14px;line-height:1.4}
+.qr-card img{width:clamp(170px,32vw,250px);height:auto;aspect-ratio:1/1;display:block;margin:0 auto;border:8px solid #fff;border-radius:14px;background:#fff;box-shadow:0 3px 14px rgba(0,0,0,.12)}
+.qr-card .tap{display:block;margin-top:12px;color:var(--rs);font-weight:800;font-size:.85em}
+/* CONTATO */
 .contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px;margin-bottom:16px}
 .contact-item{background:var(--lc);border:2.5px solid var(--lil);border-radius:18px;padding:18px;text-align:center;display:block}
 .contact-item .ico{font-size:36px;display:block;margin-bottom:6px}
 .contact-item .tag{font-size:.8em;font-weight:800;color:var(--tx2);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}
-.contact-item .val{font-size:1.15em;font-weight:900;color:var(--rx);line-height:1.3}
+.contact-item .val{font-size:1.15em;font-weight:900;color:var(--rx);line-height:1.35}
+.contact-item .days{display:block;font-size:.85em;color:var(--tx2);font-weight:700;margin-bottom:4px}
 .map{overflow:hidden;border:2px solid var(--lil);border-radius:18px;margin-bottom:14px}
 .map iframe{width:100%;height:clamp(220px,30vw,430px);border:0;display:block}
 .footer{text-align:center;color:var(--tx2);border-top:2px solid var(--bd);padding-top:18px;margin-top:28px;font-size:.85em;line-height:1.6}
@@ -108,9 +129,8 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .back{background:#f2edf6;color:var(--rx);visibility:hidden}.back.show{visibility:visible}
 .home{background:var(--rx);color:#fff}
 .alert-block{margin-top:35px;padding-top:25px;border-top:3px solid var(--bd)}
-.alert-button{width:100%;border:0;border-radius:18px;padding:20px;background:var(--vm);color:#fff;font-weight:900;cursor:pointer;font-size:1.08em}
-
-/* ===== CARDS DE CONDIÇÃO — "QUANDO DÓI" ===== */
+.alert-button{display:block;width:100%;max-width:var(--col);margin:0 auto;border:0;border-radius:18px;padding:20px;background:var(--vm);color:#fff;font-weight:900;cursor:pointer;font-size:1.08em;text-align:center}
+/* CARDS DE CONDIÇÃO — "QUANDO DÓI" */
 .condition{overflow:hidden;border:3px solid var(--rx2);background:#fff}
 .condition .head{display:flex;align-items:center;gap:16px;padding:clamp(14px,2vw,22px);background:var(--lc)}
 .condition .head .ico{font-size:clamp(34px,4vw,54px);line-height:1;flex:none}
@@ -131,21 +151,11 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .condition.red ul.clean li:before{color:var(--vm)}
 .band.warn{background:var(--ac)}.band.warn b{color:#986000}
 .band.info{background:var(--zc)}.band.info b{color:var(--az)}
-
-/* ===== FASES DO LEITE (cards de texto) ===== */
-.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px;background:var(--rx);padding:clamp(14px,2vw,24px);border-radius:24px;margin-bottom:18px}
-.phase{background:var(--rx2);color:#fff;border-radius:18px;padding:18px 14px;text-align:center}
-.phase .ico{display:block;font-size:40px;line-height:1;margin-bottom:6px}
-.phase h3{font-size:1.05em;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
-.phase .dia{display:block;font-weight:800;margin:4px 0 6px;color:#f3d9ff}
-.phase p{font-size:.88em;line-height:1.4}
-
-/* ===== PASSOS DA ORDENHA ===== */
+/* PASSOS DA ORDENHA */
 .steps{counter-reset:s;margin-bottom:16px}
 .step{display:flex;gap:14px;align-items:flex-start;background:var(--lc);border-radius:16px;padding:14px 16px;margin-bottom:10px}
 .step:before{counter-increment:s;content:counter(s);flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--rx);color:#fff;font-weight:900}
 .step b{display:block;color:var(--rx)}
-
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -154,6 +164,29 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 <main id="app"></main>
 <nav class="nav"><div class="inner"><button class="back" id="back">‹ Voltar</button><button class="home" id="home">🏠 Início</button></div></nav>
 <script>
+/* ======= LINK DO FORMULÁRIO DE AVALIAÇÃO ======= */
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffWCld7d_QRCRgnNRRb4XHX9-cHf3e5NpfxzDRFdSbrET3pg/viewform";
+
+/* QR gerado automaticamente a partir do link acima */
+const QR_SRC = "https://api.qrserver.com/v1/create-qr-code/?size=600x600&margin=12&color=794b9e&bgcolor=ffffff&data=" + encodeURIComponent(FORM_URL);
+
+const rateCard = (texto) => `
+  <a class="rate" href="${FORM_URL}" target="_blank" rel="noopener">
+    <span class="ico">⭐</span>
+    <span><b>Avalie este material</b><small>${texto}</small></span>
+    <span class="arrow">›</span>
+  </a>
+`;
+
+const qrCard = () => `
+  <a class="qr-card" href="${FORM_URL}" target="_blank" rel="noopener">
+    <b>📱 Aponte a câmera do celular</b>
+    <span class="hint">Leia o código para abrir a avaliação · anônimo e leva 2 minutos</span>
+    <img src="${QR_SRC}" alt="QR Code para o formulário de avaliação do material">
+    <span class="tap">ou toque aqui para abrir ›</span>
+  </a>
+`;
+
 const screens={
 home:()=>`
   <img src="capa.jpg" alt="Amamentação: Cultura, mitos e saberes" class="art-img">
@@ -182,12 +215,14 @@ home:()=>`
       <button class="menu-card" data-go="food"><span class="ico">🥑</span><b>A comida chega</b><small>Introdução alimentar</small></button>
     </div>
   </div>
-  <div class="sec">Material oficial do Ministério da Saúde</div>
-  <a class="linkcard" href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf" target="_blank" rel="noopener">
-    <span class="ico">📘</span>
-    <span><b>Guia Alimentar para Crianças Menores de 2 Anos</b><small>Ministério da Saúde · abrir PDF</small></span>
-    <span class="arrow">›</span>
-  </a>
+  <div class="menu-group">
+    <div class="group-title"><span class="num">4</span>Para se aprofundar</div>
+    <a class="linkcard feature" href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_crianca_brasileira_versao_resumida.pdf" target="_blank" rel="noopener">
+      <span class="ico">📘</span>
+      <span><b>Guia Alimentar para Crianças Menores de 2 Anos</b><small>Material oficial do Ministério da Saúde · abrir PDF</small></span>
+      <span class="arrow">›</span>
+    </a>
+  </div>
   <div class="alert-block">
     <div class="card danger">
       <b>Alguma coisa não parece certa?</b>
@@ -195,6 +230,7 @@ home:()=>`
     </div>
     <button class="alert-button" data-go="alerts">🚨 Ver sinais de alerta</button>
   </div>
+  ${rateCard('Leva 2 minutos e é anônimo · ajuda a melhorar o material')}
 `,
 first:()=>`
   <h2>Os primeiros dias</h2>
@@ -219,26 +255,6 @@ phases:()=>`
   <h2>Fases do leite</h2>
   <p class="sub">O leite se transforma na medida exata do crescimento do bebê.</p>
   <img src="fases-do-leite.jpg" alt="Fases do Leite Materno" class="art-img">
-  <div class="phases">
-    <div class="phase">
-      <span class="ico">🍯</span>
-      <h3>Colostro</h3>
-      <span class="dia">1º ao 6º dia</span>
-      <p>Amarelado e transparente. Rico em proteínas e anticorpos.</p>
-    </div>
-    <div class="phase">
-      <span class="ico">🥛</span>
-      <h3>Transição</h3>
-      <span class="dia">6º ao 14º dia</span>
-      <p>Mais denso e volumoso. Rico em nutrientes e gordura.</p>
-    </div>
-    <div class="phase">
-      <span class="ico">🍼</span>
-      <h3>Maduro</h3>
-      <span class="dia">do 15º dia em diante</span>
-      <p>Esbranquiçado e consistente. Contém todos os nutrientes.</p>
-    </div>
-  </div>
   <div class="myth">
     <h3><small>PERGUNTA FREQUENTE</small>Existe leite materno fraco?</h3>
     <div>
@@ -399,7 +415,7 @@ returns:()=>`
     <div class="icon-card red"><span class="ico">🤮</span><b>Vômito em jato</b><small>repetido ao longo do dia</small></div>
     <div class="icon-card red"><span class="ico">😴</span><b>Sono alterado</b><small>acorda com desconforto</small></div>
   </div>
-  <div class="card info" style="margin-top:16px">
+  <div class="card info">
     <b>Quando costuma melhorar</b>
     A musculatura que fecha a entrada do estômago amadurece com o tempo — geralmente entre 2 e 6 meses.
   </div>
@@ -428,7 +444,7 @@ milk:()=>`
     <div class="icon-card amber"><span class="ico">🧊</span><b>Congelador</b><small>até 15 dias</small></div>
     <div class="icon-card red"><span class="ico">🚫</span><b>Nunca no micro-ondas</b><small>nem fervendo o leite</small></div>
   </div>
-  <div class="card info" style="margin-top:16px">
+  <div class="card info">
     <b>Como guardar e aquecer</b>
     Use frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos. Identifique com data e hora. Para aquecer, use banho-maria com o fogo desligado.
   </div>
@@ -445,7 +461,7 @@ food:()=>`
     <div class="icon-card green"><span class="ico">🍚</span><b>Arroz e feijão</b></div>
     <div class="icon-card green"><span class="ico">🥩</span><b>Carnes e ovos</b></div>
   </div>
-  <div class="card ok" style="margin-top:16px">
+  <div class="card ok">
     <b>Amassado com o garfo</b>
     Nada de liquidificador ou peneira. O bebê precisa conhecer as texturas e aprender a mastigar.
   </div>
@@ -456,7 +472,7 @@ food:()=>`
     <div class="icon-card red"><span class="ico">🥛</span><b>Leite de vaca</b><small>só após 1 ano</small></div>
     <div class="icon-card red"><span class="ico">🥣</span><b>Engrossantes</b><small>na mamadeira</small></div>
   </div>
-  <div class="card warn" style="margin-top:16px">
+  <div class="card warn">
     <b>Recusar é normal</b>
     Pode ser preciso oferecer o mesmo alimento 8 a 10 vezes até a criança aceitar. Ofereça de novo em outro dia, sem forçar.
   </div>
@@ -471,11 +487,11 @@ alerts:()=>`
     <div class="icon-card red"><span class="ico">🤒</span><b>Febre com dor mamária</b></div>
     <div class="icon-card red"><span class="ico">🤮</span><b>Vômitos em jato contínuos</b></div>
   </div>
-  <div class="card" style="margin-top:16px">
+  <div class="card">
     <b>A saúde da mãe também importa</b>
     Tristeza persistente, choro fácil, dificuldade de se vincular ao bebê ou sensação de não dar conta merecem acolhimento. Converse com a equipe.
   </div>
-  <a class="linkcard" href="tel:+554836219556" style="margin-top:20px">
+  <a class="linkcard" href="tel:+554836219556">
     <span class="ico">📞</span>
     <span><b>Ligar para a UBS Fábio Silva</b><small>(48) 3621-9556</small></span>
     <span class="arrow">›</span>
@@ -494,6 +510,7 @@ contact:()=>`
     <div class="contact-item">
       <span class="ico">🕗</span>
       <div class="tag">Horário de Atendimento</div>
+      <span class="days">Segunda a sexta-feira</span>
       <div class="val">07:00 às 12:00<br>13:00 às 16:00</div>
     </div>
   </div>
@@ -505,6 +522,9 @@ contact:()=>`
   <div class="map">
     <iframe src="https://www.google.com/maps?q=Rua+Pedro+Esmeraldino+de+Menezes,+F%C3%A1bio+Silva,+Tubar%C3%A3o+-+SC&output=embed" loading="lazy" title="Mapa da UBS Fábio Silva"></iframe>
   </div>
+  <div class="sec">Avaliação do material</div>
+  ${rateCard('Sua opinião ajuda a melhorar o cuidado na UBS · anônimo')}
+  ${qrCard()}
   <div class="footer">
     Material educativo — <b>Mostra PMSUS 2026.2</b><br>
     TURMA 49B · UNISUL · UBS Fábio Silva<br>
