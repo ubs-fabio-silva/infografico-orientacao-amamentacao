@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#794b9e">
-<title>Amamentação: cultura, mitos e saberes</title>
+<title>Amamentação: cuidado, vínculo e proteção</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -151,16 +151,22 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .condition.red ul.clean li:before{color:var(--vm)}
 .band.warn{background:var(--ac)}.band.warn b{color:#986000}
 .band.info{background:var(--zc)}.band.info b{color:var(--az)}
-/* PASSOS DA ORDENHA */
+/* PASSOS NUMERADOS */
 .steps{counter-reset:s;margin-bottom:16px}
 .step{display:flex;gap:14px;align-items:flex-start;background:var(--lc);border-radius:16px;padding:14px 16px;margin-bottom:10px}
 .step:before{counter-increment:s;content:counter(s);flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--rx);color:#fff;font-weight:900}
 .step b{display:block;color:var(--rx)}
+/* LINHA DO TEMPO DA APOJADURA */
+.phase-line{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px;margin-bottom:18px}
+.phase-item{background:var(--rx);color:#fff;border-radius:18px;padding:16px 14px;text-align:center}
+.phase-item .when{display:block;font-size:.8em;font-weight:800;color:#f3d9ff;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.phase-item b{display:block;font-size:1.05em;font-weight:900;margin-bottom:5px}
+.phase-item span{display:block;font-size:.88em;line-height:1.35}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header class="top"><div class="inner brand" id="brand">Amamentação<small>Cultura, mitos e saberes</small></div></header>
+<header class="top"><div class="inner brand" id="brand">Amamentação<small>Cuidado, vínculo e proteção</small></div></header>
 <main id="app"></main>
 <nav class="nav"><div class="inner"><button class="back" id="back">‹ Voltar</button><button class="home" id="home">🏠 Início</button></div></nav>
 <script>
@@ -191,9 +197,9 @@ const qrCard = () => `
 
 const screens={
 home:()=>`
-  <img src="capa.jpg" alt="Amamentação: Cultura, mitos e saberes" class="art-img">
+  <img src="capa.jpg" alt="Amamentação: cuidado, vínculo e proteção" class="art-img">
   <h1 style="text-align:center">Amamentação</h1>
-  <p class="sub" style="text-align:center">Cultura, mitos e saberes</p>
+  <p class="sub" style="text-align:center">Cuidado, vínculo e proteção</p>
   <div class="menu-group">
     <div class="group-title"><span class="num">1</span>Os primeiros dias</div>
     <div class="grid">
@@ -236,16 +242,78 @@ home:()=>`
 `,
 first:()=>`
   <h2>Os primeiros dias</h2>
-  <p class="sub">Apojadura e adaptação inicial.</p>
+  <p class="sub">A apojadura — quando o leite desce.</p>
+
+  <img src="apojadura.jpg" alt="Apojadura: a descida do leite nos primeiros dias" class="art-img">
+
   <div class="hero-number">
     <strong>3º–5º</strong>
     <b>dia após o parto</b>
-    <p>É quando ocorre a descida do leite (apojadura).</p>
+    <p>É quando costuma ocorrer a apojadura, a descida do leite.</p>
   </div>
+
+  <div class="card">
+    <b>O que é a apojadura</b>
+    Com a saída da placenta, o corpo libera prolactina e a produção de leite aumenta de forma intensa. Junto com o leite, chega mais sangue e líquido à mama — por isso ela fica cheia, quente e mais sensível. É um processo natural e temporário.
+  </div>
+
+  <div class="sec">Como o leite evolui</div>
+  <div class="phase-line">
+    <div class="phase-item">
+      <span class="when">1º ao 2º dia</span>
+      <b>Colostro</b>
+      <span>Pouco volume, mas suficiente. Rico em anticorpos.</span>
+    </div>
+    <div class="phase-item">
+      <span class="when">3º ao 5º dia</span>
+      <b>Apojadura</b>
+      <span>O volume aumenta rápido. A mama fica cheia e mais firme.</span>
+    </div>
+    <div class="phase-item">
+      <span class="when">Após 48–72 h</span>
+      <b>Regulação</b>
+      <span>O corpo ajusta a produção à demanda do bebê.</span>
+    </div>
+  </div>
+
+  <div class="sec">Sinais de que a apojadura chegou</div>
+  <div class="grid">
+    <div class="icon-card amber"><span class="ico">🫄</span><b>Mamas cheias</b><small>mais volumosas e firmes</small></div>
+    <div class="icon-card amber"><span class="ico">🌡️</span><b>Calor local</b><small>sensação de peso</small></div>
+    <div class="icon-card amber"><span class="ico">💧</span><b>Leite escorre</b><small>entre as mamadas</small></div>
+    <div class="icon-card amber"><span class="ico">🎨</span><b>Leite mais claro</b><small>deixa de ser amarelado</small></div>
+  </div>
+  <div class="card warn">
+    <b>Desconforto por 24 a 48 horas é esperado</b>
+    A sensação de peso e sensibilidade costuma diminuir quando o corpo regula a produção. Dor intensa, porém, não é normal.
+  </div>
+
+  <div class="sec">O que ajuda nesse momento</div>
+  <div class="steps">
+    <div class="step"><div><b>Amamente em livre demanda</b>Sempre que o bebê quiser, dia e noite. O esvaziamento frequente é o que mais alivia.</div></div>
+    <div class="step"><div><b>Confira a pega</b>Uma pega correta esvazia melhor a mama e previne fissuras.</div></div>
+    <div class="step"><div><b>Ordenha de alívio antes da mamada</b>Retire um pouco de leite até a aréola ficar mais macia, facilitando a pega do bebê.</div></div>
+    <div class="step"><div><b>Use sutiã de alças largas e firmes</b>Sustenta sem comprimir. Evite modelos apertados ou com aro.</div></div>
+  </div>
+
+  <div class="sec">O que evitar</div>
+  <div class="grid">
+    <div class="icon-card red"><span class="ico">⏰</span><b>Espaçar mamadas</b><small>piora o ingurgitamento</small></div>
+    <div class="icon-card red"><span class="ico">🍼</span><b>Complemento sem indicação</b><small>reduz o estímulo</small></div>
+    <div class="icon-card red"><span class="ico">🚿</span><b>Compressa quente demorada</b><small>pode aumentar o inchaço</small></div>
+    <div class="icon-card red"><span class="ico">🫙</span><b>Apertar a mama com força</b><small>machuca o tecido</small></div>
+  </div>
+
   <div class="card ok">
-    <b>Pele a pele & Livre demanda</b>
-    O contato direto do bebê no peito estimula a liberação dos hormônios naturais que auxiliam na descida rápida do leite.
+    <b>Pele a pele desde a sala de parto</b>
+    O contato direto estimula os hormônios da amamentação, acalma o bebê, estabiliza a temperatura e favorece o vínculo.
   </div>
+
+  <div class="card danger">
+    <b>Procure a UBS se houver</b>
+    Febre, mama muito vermelha ou endurecida, dor que não melhora após o esvaziamento, ou se o bebê não consegue pegar o peito.
+  </div>
+
   <div class="sec">Rede de apoio</div>
   <div class="grid">
     <div class="icon-card green"><span class="ico">👨‍👩‍👧</span><b>Família</b><small>ajuda e apoia</small></div>
@@ -480,12 +548,17 @@ food:()=>`
     <b>Amassado com o garfo</b>
     Nada de liquidificador ou peneira. O bebê precisa conhecer as texturas e aprender a mastigar.
   </div>
-  <div class="sec">Evite até 1 ano</div>
+  <div class="sec">O que evitar</div>
   <div class="grid">
-    <div class="icon-card red"><span class="ico">🍬</span><b>Açúcar e mel</b><small>nenhuma quantidade</small></div>
-    <div class="icon-card red"><span class="ico">🧃</span><b>Suco de caixinha</b><small>e refrigerante</small></div>
+    <div class="icon-card red"><span class="ico">🍯</span><b>Mel</b><small>só após 1 ano</small></div>
     <div class="icon-card red"><span class="ico">🥛</span><b>Leite de vaca</b><small>só após 1 ano</small></div>
+    <div class="icon-card red"><span class="ico">🍬</span><b>Açúcar</b><small>só após 2 anos</small></div>
+    <div class="icon-card red"><span class="ico">🏭</span><b>Industrializados</b><small>evitar sempre</small></div>
     <div class="icon-card red"><span class="ico">🥣</span><b>Engrossantes</b><small>na mamadeira</small></div>
+  </div>
+  <div class="card danger">
+    <b>Mel antes de 1 ano pode causar botulismo</b>
+    Nenhuma quantidade é segura nesse período, nem para adoçar chá ou para passar na chupeta.
   </div>
   <div class="card warn">
     <b>Recusar é normal</b>
@@ -548,7 +621,7 @@ contact:()=>`
 `
 };
 const titles={
-  home:'Amamentação',first:'Os primeiros dias',phases:'Fases do leite',
+  home:'Amamentação',first:'Apojadura',phases:'Fases do leite',
   latch:'A pega e Posições',pain:'Quando dói',amount:'Quanto mama',
   returns:'Leite que volta',milk:'Tirar o leite',food:'A comida chega',
   alerts:'Sinais de Alerta',contact:'Contato'
@@ -559,7 +632,7 @@ function render(id,push=true){
   if(push&&id!==current)historyStack.push(current);
   current=id;
   app.innerHTML=`<section class="screen on" id="${id}">${screens[id]()}</section>`;
-  document.getElementById('brand').innerHTML=`${titles[id]||'Amamentação'}<small>Cultura, mitos e saberes</small>`;
+  document.getElementById('brand').innerHTML=`${titles[id]||'Amamentação'}<small>Cuidado, vínculo e proteção</small>`;
   document.getElementById('back').classList.toggle('show',id!=='home');
   if(id==='home')historyStack.length=0;
   window.scrollTo(0,0);
