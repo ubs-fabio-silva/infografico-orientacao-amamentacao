@@ -164,7 +164,6 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 <main id="app"></main>
 <nav class="nav"><div class="inner"><button class="back" id="back">‹ Voltar</button><button class="home" id="home">🏠 Início</button></div></nav>
 <script>
-
 /* ======= LINK DO FORMULÁRIO DE AVALIAÇÃO ======= */
 const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffWCld7d_QRCRgnNRRb4XHX9-cHf3e5NpfxzDRFdSbrET3pg/viewform";
 
@@ -172,13 +171,11 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffWCld7d_QRCRgnNRRb4
 const QR_LOCAL = "qr-avaliacao.png";
 const QR_API = "https://api.qrserver.com/v1/create-qr-code/?size=600x600&margin=12&color=794b9e&bgcolor=ffffff&data=" + encodeURIComponent(FORM_URL);
 
-const qrCard = () => `
-  <a class="qr-card" href="${FORM_URL}" target="_blank" rel="noopener">
-    <b>📱 Aponte a câmera do celular</b>
-    <span class="hint">Leia o código para abrir a avaliação · anônimo e leva 2 minutos</span>
-    <img src="${QR_LOCAL}" alt="QR Code para o formulário de avaliação do material"
-         onerror="this.onerror=null;this.src='${QR_API}';">
-    <span class="tap">ou toque aqui para abrir ›</span>
+const rateCard = (texto) => `
+  <a class="rate" href="${FORM_URL}" target="_blank" rel="noopener">
+    <span class="ico">⭐</span>
+    <span><b>Avalie este material</b><small>${texto}</small></span>
+    <span class="arrow">›</span>
   </a>
 `;
 
@@ -186,7 +183,8 @@ const qrCard = () => `
   <a class="qr-card" href="${FORM_URL}" target="_blank" rel="noopener">
     <b>📱 Aponte a câmera do celular</b>
     <span class="hint">Leia o código para abrir a avaliação · anônimo e leva 2 minutos</span>
-    <img src="${QR_SRC}" alt="QR Code para o formulário de avaliação do material">
+    <img src="${QR_LOCAL}" alt="QR Code para o formulário de avaliação do material"
+         onerror="this.onerror=null;this.src='${QR_API}';">
     <span class="tap">ou toque aqui para abrir ›</span>
   </a>
 `;
