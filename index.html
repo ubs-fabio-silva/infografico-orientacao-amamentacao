@@ -132,6 +132,20 @@ ul.clean li:before{content:'✓';position:absolute;left:0;color:var(--vd);font-w
 .band.warn{background:var(--ac)}.band.warn b{color:#986000}
 .band.info{background:var(--zc)}.band.info b{color:var(--az)}
 
+/* ===== FASES DO LEITE (cards de texto) ===== */
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px;background:var(--rx);padding:clamp(14px,2vw,24px);border-radius:24px;margin-bottom:18px}
+.phase{background:var(--rx2);color:#fff;border-radius:18px;padding:18px 14px;text-align:center}
+.phase .ico{display:block;font-size:40px;line-height:1;margin-bottom:6px}
+.phase h3{font-size:1.05em;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
+.phase .dia{display:block;font-weight:800;margin:4px 0 6px;color:#f3d9ff}
+.phase p{font-size:.88em;line-height:1.4}
+
+/* ===== PASSOS DA ORDENHA ===== */
+.steps{counter-reset:s;margin-bottom:16px}
+.step{display:flex;gap:14px;align-items:flex-start;background:var(--lc);border-radius:16px;padding:14px 16px;margin-bottom:10px}
+.step:before{counter-increment:s;content:counter(s);flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--rx);color:#fff;font-weight:900}
+.step b{display:block;color:var(--rx)}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -205,6 +219,26 @@ phases:()=>`
   <h2>Fases do leite</h2>
   <p class="sub">O leite se transforma na medida exata do crescimento do bebê.</p>
   <img src="fases-do-leite.jpg" alt="Fases do Leite Materno" class="art-img">
+  <div class="phases">
+    <div class="phase">
+      <span class="ico">🍯</span>
+      <h3>Colostro</h3>
+      <span class="dia">1º ao 6º dia</span>
+      <p>Amarelado e transparente. Rico em proteínas e anticorpos.</p>
+    </div>
+    <div class="phase">
+      <span class="ico">🥛</span>
+      <h3>Transição</h3>
+      <span class="dia">6º ao 14º dia</span>
+      <p>Mais denso e volumoso. Rico em nutrientes e gordura.</p>
+    </div>
+    <div class="phase">
+      <span class="ico">🍼</span>
+      <h3>Maduro</h3>
+      <span class="dia">do 15º dia em diante</span>
+      <p>Esbranquiçado e consistente. Contém todos os nutrientes.</p>
+    </div>
+  </div>
   <div class="myth">
     <h3><small>PERGUNTA FREQUENTE</small>Existe leite materno fraco?</h3>
     <div>
@@ -332,7 +366,20 @@ amount:()=>`
     <div class="stomach"><div class="fruit f3">🍑</div><b>1 semana</b><span class="ml">45–60 mL</span><small>pêssego</small></div>
     <div class="stomach"><div class="fruit f4">🥚</div><b>1 mês</b><span class="ml">80–150 mL</span><small>ovo grande</small></div>
   </div>
-  <div class="card ok" style="margin-top:20px">
+
+  <div class="sec">Sinais de fome</div>
+  <div class="grid">
+    <div class="icon-card amber"><span class="ico">👅</span><b>Leva a mão à boca</b><small>e faz movimentos de sucção</small></div>
+    <div class="icon-card amber"><span class="ico">🔎</span><b>Procura o peito</b><small>vira a cabeça buscando</small></div>
+    <div class="icon-card amber"><span class="ico">😮</span><b>Fica mais agitado</b><small>antes mesmo de chorar</small></div>
+  </div>
+  <div class="card warn">
+    <b>O choro é o último sinal</b>
+    Ofereça o peito nos primeiros sinais. Um bebê já chorando tem mais dificuldade para fazer a pega correta.
+  </div>
+
+  <div class="sec">Sinais de saciedade</div>
+  <div class="card ok">
     <b>Como saber se o bebê está satisfeito</b>
     6 ou mais fraldas molhadas por dia, ganho de peso constante e comportamento calmo após a mamada.
   </div>
@@ -345,19 +392,45 @@ returns:()=>`
     <b>Regurgitar é normal</b>
     A válvula do estômago do recém-nascido é imatura. Se o bebê ganha peso e não sente dor ao golfar, é um processo natural.
   </div>
+  <div class="sec">Aí sim procure a unidade</div>
+  <div class="grid">
+    <div class="icon-card red"><span class="ico">📉</span><b>Não ganha peso</b><small>ou está perdendo</small></div>
+    <div class="icon-card red"><span class="ico">😣</span><b>Muito irritado</b><small>chora sempre e com dor</small></div>
+    <div class="icon-card red"><span class="ico">🤮</span><b>Vômito em jato</b><small>repetido ao longo do dia</small></div>
+    <div class="icon-card red"><span class="ico">😴</span><b>Sono alterado</b><small>acorda com desconforto</small></div>
+  </div>
+  <div class="card info" style="margin-top:16px">
+    <b>Quando costuma melhorar</b>
+    A musculatura que fecha a entrada do estômago amadurece com o tempo — geralmente entre 2 e 6 meses.
+  </div>
 `,
 milk:()=>`
   <h2>Tirar o leite</h2>
   <p class="sub">Ordenha manual e armazenamento seguro.</p>
   <img src="ordenha-manual.jpg" alt="Técnica de Ordenha Manual" class="art-img">
+
+  <div class="sec">Como fazer a ordenha manual</div>
+  <div class="steps">
+    <div class="step"><div><b>Lave bem as mãos</b>Prenda os cabelos e evite falar sobre o frasco durante a retirada.</div></div>
+    <div class="step"><div><b>Massageie a mama</b>Movimentos circulares suaves, da base em direção à aréola.</div></div>
+    <div class="step"><div><b>Posicione os dedos em C</b>Polegar acima e indicador abaixo, atrás da aréola. Pressione em direção ao tórax e solte, de forma ritmada.</div></div>
+  </div>
+
   <div class="hero-number">
     <strong>20–30</strong>
     <b>minutos em cada mama</b>
     <p>com movimentos calmos e contínuos</p>
   </div>
-  <div class="card info">
-    <b>Dica de armazenamento</b>
-    Armazene em frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos.
+
+  <div class="sec">Armazenamento seguro</div>
+  <div class="grid">
+    <div class="icon-card amber"><span class="ico">❄️</span><b>Geladeira</b><small>até 12 horas</small></div>
+    <div class="icon-card amber"><span class="ico">🧊</span><b>Congelador</b><small>até 15 dias</small></div>
+    <div class="icon-card red"><span class="ico">🚫</span><b>Nunca no micro-ondas</b><small>nem fervendo o leite</small></div>
+  </div>
+  <div class="card info" style="margin-top:16px">
+    <b>Como guardar e aquecer</b>
+    Use frascos de vidro com tampa de plástico, esterilizados por fervura durante 15 minutos. Identifique com data e hora. Para aquecer, use banho-maria com o fogo desligado.
   </div>
 `,
 food:()=>`
@@ -372,6 +445,21 @@ food:()=>`
     <div class="icon-card green"><span class="ico">🍚</span><b>Arroz e feijão</b></div>
     <div class="icon-card green"><span class="ico">🥩</span><b>Carnes e ovos</b></div>
   </div>
+  <div class="card ok" style="margin-top:16px">
+    <b>Amassado com o garfo</b>
+    Nada de liquidificador ou peneira. O bebê precisa conhecer as texturas e aprender a mastigar.
+  </div>
+  <div class="sec">Evite até 1 ano</div>
+  <div class="grid">
+    <div class="icon-card red"><span class="ico">🍬</span><b>Açúcar e mel</b><small>nenhuma quantidade</small></div>
+    <div class="icon-card red"><span class="ico">🧃</span><b>Suco de caixinha</b><small>e refrigerante</small></div>
+    <div class="icon-card red"><span class="ico">🥛</span><b>Leite de vaca</b><small>só após 1 ano</small></div>
+    <div class="icon-card red"><span class="ico">🥣</span><b>Engrossantes</b><small>na mamadeira</small></div>
+  </div>
+  <div class="card warn" style="margin-top:16px">
+    <b>Recusar é normal</b>
+    Pode ser preciso oferecer o mesmo alimento 8 a 10 vezes até a criança aceitar. Ofereça de novo em outro dia, sem forçar.
+  </div>
 `,
 alerts:()=>`
   <h2>Procure a UBS</h2>
@@ -382,6 +470,10 @@ alerts:()=>`
     <div class="icon-card red"><span class="ico">😴</span><b>Muito sonolento / sem sugar</b></div>
     <div class="icon-card red"><span class="ico">🤒</span><b>Febre com dor mamária</b></div>
     <div class="icon-card red"><span class="ico">🤮</span><b>Vômitos em jato contínuos</b></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <b>A saúde da mãe também importa</b>
+    Tristeza persistente, choro fácil, dificuldade de se vincular ao bebê ou sensação de não dar conta merecem acolhimento. Converse com a equipe.
   </div>
   <a class="linkcard" href="tel:+554836219556" style="margin-top:20px">
     <span class="ico">📞</span>
